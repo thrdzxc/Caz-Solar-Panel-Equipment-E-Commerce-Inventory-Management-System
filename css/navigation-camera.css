@@ -1,0 +1,56 @@
+/* Keep the customer header geometry identical on every page. */
+body .navbar.caz-customer-navigation {
+  display:grid; grid-template-columns:190px minmax(0,1fr) 360px;
+  align-items:center; column-gap:22px; row-gap:12px; padding:14px 28px;
+  font-family:inherit;
+}
+body .caz-customer-navigation .caz-brand { grid-column:1; grid-row:1; }
+body .caz-customer-navigation .caz-nav-links {
+  grid-column:2; grid-row:1; display:flex; align-items:center; justify-content:center;
+  flex-wrap:nowrap; min-width:0; width:100%; margin:0; gap:4px;
+}
+body .caz-customer-navigation .caz-nav-links a {
+  flex:none; min-height:44px; padding:10px 13px; font-family:inherit;
+  font-size:15px; line-height:1.4; font-weight:600; white-space:nowrap;
+}
+body .caz-customer-navigation .caz-nav-actions {
+  grid-column:3; grid-row:1; display:grid; grid-template-columns:102px 130px 112px;
+  gap:8px; margin:0; width:360px;
+}
+body .caz-customer-navigation .nav-action {
+  display:flex; align-items:center; justify-content:center; min-width:0;
+  min-height:44px; padding:9px 10px; font-family:inherit; font-size:15px;
+  line-height:1.4; font-weight:600; text-decoration:none; white-space:nowrap;
+}
+body .caz-customer-navigation .nav-action .cart-count-badge { min-width:24px; padding:0 5px; font-size:12px; }
+@media(max-width:1440px) {
+  body .navbar.caz-customer-navigation { grid-template-columns:minmax(0,1fr) 360px; }
+  body .caz-customer-navigation .caz-nav-actions { grid-column:2; }
+  body .caz-customer-navigation .caz-nav-links {
+    grid-column:1/-1; grid-row:2; justify-content:flex-start; overflow-x:auto;
+    border-top:1px solid #b7f4ef33; padding-top:10px; scrollbar-width:thin;
+  }
+}
+@media(max-width:560px) {
+  body .navbar.caz-customer-navigation { grid-template-columns:minmax(0,1fr) 156px; padding:12px 16px; column-gap:10px; }
+  body .caz-customer-navigation .caz-nav-actions { width:156px; grid-template-columns:44px 56px 44px; gap:6px; }
+  body .caz-customer-navigation .nav-action { padding:8px 5px; gap:3px; }
+  body .caz-customer-navigation .nav-action > span:not(.cart-count-badge):not([data-account-avatar]) { display:none; }
+  body .caz-customer-navigation [data-account-avatar] { display:inline-flex; }
+  body .caz-customer-navigation .caz-nav-links a { font-size:14px; padding:9px 12px; }
+  body .caz-customer-navigation .caz-brand { gap:8px; }
+}
+@media(max-width:380px) { body .caz-customer-navigation .caz-brand small { display:none; } }
+/* SVG coordinates use the wallpaper's view box, so the lens stays aligned as it crops. */
+.caz-camera-effects { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:hidden; }
+.caz-camera-scan { transform-box:view-box; transform-origin:1428px 224px; animation:caz-camera-scan 12s ease-in-out infinite alternate; opacity:.88; }
+.caz-camera-lens-glow { animation:caz-camera-light 12s ease-in-out infinite alternate; }
+.caz-camera-record-light { opacity:.95; filter:drop-shadow(0 0 7px #ff1638); animation:caz-camera-light 6s ease-in-out infinite alternate; }
+@keyframes caz-camera-scan { from { transform:rotate(-9deg); } to { transform:rotate(9deg); } }
+@keyframes caz-camera-light { from { opacity:.72; } to { opacity:1; } }
+@media(prefers-reduced-motion:reduce) {
+  .caz-camera-scan,.caz-camera-lens-glow,.caz-camera-record-light { animation:none; }
+  .caz-camera-scan { opacity:.6; }
+  .caz-camera-lens-glow,.caz-camera-record-light { opacity:.8; }
+}
+@media print { .caz-camera-effects { display:none; } }

@@ -1,0 +1,24 @@
+/* Customer account photo: clear actions and a calm, light preview. */
+body .nav-action [data-account-avatar] { display:inline-flex; align-items:center; justify-content:center; flex:none; }
+body .nav-action img.account-photo { display:block; width:29px; height:29px; max-width:none; padding:0; border:1px solid #d7e1e9; border-radius:50%; object-fit:cover; background:#f1f5f7; opacity:1; filter:none; transform:none; }
+body .profile-icon-wrap .profile-avatar:has(.profile-photo-editor) { font-size:inherit; line-height:1.5; margin-bottom:12px; }
+body .profile-photo-editor { padding:20px 14px 17px; border:1px solid #dce5e9; border-radius:16px; background:linear-gradient(140deg,#f4f8f6,#fff 75%); text-align:center; }
+body .profile-photo-preview { display:grid; place-items:center; width:108px; height:108px; overflow:hidden; margin:0 auto 12px; border:4px solid #fff; border-radius:50%; background:#e9f1ed; color:#42705b; box-shadow:0 0 0 1px #d3e1d9,0 6px 16px #254e3b0d; }
+body .profile-photo-preview img { display:block; width:100%; height:100%; max-width:none; max-height:none; padding:0; margin:0; border:0; border-radius:50%; object-fit:cover; background:#e9f1ed; opacity:1; filter:none; transform:none; }
+body .profile-photo-preview svg { width:54px; height:54px; fill:currentColor; }
+body .profile-photo-title { margin:0 0 4px; color:#2f465c; font-size:17px; font-weight:700; }
+body .profile-photo-help { margin:4px 0 13px; color:#586d7f; font-size:13px; line-height:1.6; }
+body .profile-photo-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
+body .profile-photo-button { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:9px 14px; border:1px solid #b8cfc2; border-radius:9px; background:#fff; color:#255b42; font:600 14px/1.4 inherit; font-family:inherit; font-size:14px; font-weight:600; line-height:1.4; text-transform:none; letter-spacing:0; cursor:pointer; }
+body .profile-photo-button:hover { background:#eaf3ed; border-color:#91b39e; color:#194a32; }
+body .profile-photo-button-primary { background:#236746; color:#fff; border-color:#236746; }
+body .profile-photo-button-primary:hover { background:#1c5238; color:#fff; border-color:#1c5238; }
+body .profile-photo-button-remove { border-color:#e2c3ca; color:#9a3044; }
+body .profile-photo-button-remove:hover { background:#fff1f3; border-color:#ca9da8; color:#85293b; }
+body .profile-photo-button:disabled { opacity:.6; cursor:wait; }
+body .profile-photo-button:focus-visible { outline:3px solid #477aa6; outline-offset:3px; }
+body .profile-photo-editor [hidden] { display:none !important; }
+body .profile-photo-status { margin:11px 0 0; color:#37634e; font-size:14px; line-height:1.6; overflow-wrap:anywhere; }
+body .profile-photo-status:empty { display:none; }
+body .profile-photo-status[data-state="error"] { color:#a1273f; }
+@media(max-width:420px) { body .profile-photo-editor { padding:17px 10px; } body .profile-photo-button { flex:1 1 115px; } }

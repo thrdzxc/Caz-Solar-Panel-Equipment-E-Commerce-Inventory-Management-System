@@ -1,0 +1,32 @@
+/* Store location editor and customer map share compact teal surfaces. */
+.store-settings { width:min(1200px,100%); margin:auto; padding:30px 24px 55px; }
+.store-editor { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(300px,1fr); gap:22px; align-items:start; }
+body.caz-themed :is(.store-map-card,.store-form-card,.store-visit-card) { background:rgba(5,62,67,.83); border:1px solid #b2e4df55; border-radius:20px; padding:22px; backdrop-filter:blur(16px); color:#efffff; }
+body.caz-themed :is(.store-map-card,.store-form-card,.store-visit-card) h2 { font-size:21px; color:#f2ffff; margin:0 0 18px; }
+.store-map-heading { display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center; margin-bottom:16px; }
+.store-map-heading h2 { margin:0 !important; }
+.store-pin-state { font-size:13px; border:1px solid #b9ebe455; border-radius:20px; padding:5px 10px; color:#dbfff6; background:#80d1bc16; }
+.store-map { height:330px; width:100%; border:1px solid #aadfdc55; border-radius:13px; overflow:hidden; background:#d6ece7; color:#163e40; z-index:0; }
+.store-map-fallback { padding:25px; }
+.store-map-tools,.store-route-actions { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 10px; }
+body.caz-themed :is(.store-map-tools button,.store-directions) { display:inline-flex; justify-content:center; align-items:center; min-height:44px; padding:10px 14px; font:600 15px/1.4 var(--caz-font,system-ui); border:1px solid #a6dcd67a; border-radius:10px; background:#b2eee112; color:#edffff; text-decoration:none; cursor:pointer; }
+body.caz-themed :is(.store-map-tools button,.store-directions):hover { background:#b2eee12a; color:#fff; }
+body.caz-themed :is(.store-map-note,.store-map-status,.store-save-status,.store-visit-address) { color:#d2efeb; font-size:15px; line-height:1.6; margin:12px 0 0; }
+.store-map-status:empty,.store-save-status:empty { display:none; }
+body.caz-themed .store-form-card label { display:block; color:#e0f5f1; font-size:15px; margin:16px 0 7px; }
+body.caz-themed #store-location-form .store-form-card :is(input,textarea) { width:100%; background:rgba(5,43,47,.55) !important; color:#f2ffff !important; border-color:#acd8d46b !important; }
+.store-coordinates { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+body.caz-themed .store-save { width:100%; border:1px solid #87ccaf; border-radius:10px; background:#216b50; color:#fff; min-height:48px; margin:22px 0 4px; font:700 16px var(--caz-font,system-ui); cursor:pointer; }
+.store-form-card .store-directions { margin-top:14px; width:100%; }
+.store-save:disabled { opacity:.7; cursor:wait; }
+.store-marker { background:none; border:0; }
+.store-marker span { display:block; width:28px; height:28px; background:#b22942; border:3px solid #fff; border-radius:50% 50% 50% 0; transform:rotate(-45deg); box-shadow:0 2px 6px #0006; }
+body.caz-themed .store-map :is(.leaflet-popup-content,.leaflet-popup-content p,.leaflet-popup-content strong) { color:#193e3c !important; font-size:14px; }
+body.caz-themed .store-map .leaflet-popup-content a { color:#11674f; font-weight:700; }
+body.caz-themed .store-map .leaflet-control-zoom a { background:#fff; color:#183c3d; font-size:22px; }
+body.caz-themed .store-map .leaflet-control-attribution { color:#244a48; background:#ffffffe6; }
+body.caz-themed .store-map .leaflet-control-attribution a { color:#176655; }
+.store-visit-card .store-map { height:300px; margin:16px 0; }
+.store-pin-pending { padding:10px 12px; border:1px solid #dfd08a55; border-radius:10px; background:#dcc68112; color:#fff3cf; font-size:14px; }
+@media(max-width:800px) { .store-editor {grid-template-columns:1fr;} .store-settings {padding:24px 16px;} }
+@media(max-width:450px) { .store-coordinates {grid-template-columns:1fr;} .store-map-tools button {width:100%;} .store-map {height:280px;} }

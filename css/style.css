@@ -1,0 +1,1784 @@
+/* ============================================
+   PORTAL, LOGIN, & REGISTER SYSTEM OVERHAUL
+   ============================================ */
+
+/* The master background container framework */
+.portal-body {
+  background-color: #050505 !important;
+  background-image:
+  radial-gradient(ellipse at 0% 0%, rgba(223,44,41,0.10) 0%, transparent 45%),
+    radial-gradient(ellipse at 100% 100%, rgba(223,44,41,0.10) 0%, transparent 45%),
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: auto, auto, 20px 20px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Fixes the layout alignment for portal.php and login.php */
+.portal-container, 
+.login-container,
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 500px; /* Widened bounding container layout */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Adjusts the logo scale above the form panels */
+.main-logo img { 
+  width: 260px; 
+  height: auto;
+  margin-bottom: 50px; 
+}
+
+/* --- PORTAL BUTTON LAYOUT (portal.php) --- */
+.portal-buttons { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 15px; 
+}
+
+.portal-btn {
+  color: #ffffff !important;
+  text-decoration: none;
+  padding: 15px 0;
+  width: 300px; /* Forces buttons to match form width perfectly */
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background-color: #0c0c0c;
+  border: 1px solid #1a1a1a;
+  border-radius: 0px; /* Sharp technical edges */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Distinct hover styles for each gateway option */
+.portal-btn:first-child:hover {
+  background-color: #e53935; /* Customer brand red */
+  border-color: #e53935;
+}
+
+.portal-btn:last-child:hover {
+  background-color: #ffffff; /* Admin terminal white */
+  color: #000000 !important;
+  border-color: #ffffff;
+}
+
+/* --- AUTH CARD & INPUT ELEMENT FIELD ALIGNMENT --- */
+.login-card {
+  background-color: #0a0a0a; /* Premium solid flat black plane */
+  border: 1px solid #141414; /* Fine structural grid border line */
+  border-radius: 0px; /* Strips the standard rounded corners */
+  padding: 35px 30px;
+  text-align: left; /* Keeps all form descriptors neatly organized */
+  box-sizing: border-box;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label { 
+  display: block; 
+  color: #555555; /* Understated system label color */
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold; 
+  margin-bottom: 8px; 
+  letter-spacing: 1px;
+}
+
+.input-group input { 
+  width: 100%; 
+  padding: 14px 16px; /* Taller input track paddings */
+  background-color: #050505;
+  border: 1px solid #1c1c1c;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px; /* Bumped text size */
+  border-radius: 0px; 
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Active field focusing glow indicator */
+.input-group input:focus {
+  border-color: #e53935;
+  background-color: #0a0a0a;
+}
+
+/* Form submission action controls */
+.login-action {
+  margin-top: 25px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #222222;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: #e53935;
+  border-color: #e53935;
+}
+
+/* --- SYSTEM ALERT NOTIFICATIONS --- */
+/* Cleans up the raw style attributes outputted by the PHP scripts */
+.login-card p[style*="color"],
+.login-card p {
+  padding: 12px !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 13px !important;
+  border-radius: 0px !important;
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+  text-align: center !important;
+  box-sizing: border-box;
+}
+
+/* Custom adjustments for Error alerts */
+.login-card p[style*="#ff5252"],
+.login-card p[style*="rgba(255,0,0"] {
+  color: #ff5252 !important;
+  background: rgba(255, 82, 82, 0.05) !important;
+  border: 1px solid rgba(255, 82, 82, 0.15) !important;
+  border-left: 3px solid #ff5252 !important;
+}
+
+/* Custom adjustments for Success alerts */
+.login-card p[style*="#4BB543"],
+.login-card p[style*="rgba(0,255,0"] {
+  color: #4caf50 !important;
+  background: rgba(76, 175, 80, 0.05) !important;
+  border: 1px solid rgba(76, 175, 80, 0.15) !important;
+  border-left: 3px solid #4caf50 !important;
+}
+
+/* --- LINK RE-ROUTING SYSTEM FOOTER --- */
+.register-link, 
+.login-link {
+  margin-top: 25px;
+}
+
+.register-link p, 
+.login-link p {
+  color: #444444;
+  font-size: 13px;
+}
+
+.register-link a, 
+.login-link a {
+  color: #e53935;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 4px;
+  transition: color 0.2s ease;
+}
+
+.register-link a:hover, 
+.login-link a:hover {
+  color: #ffffff;
+}
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #0A0A0A;
+
+}
+
+
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+  font-family: 'Michroma', sans-serif;
+  background: transparent;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a, .nav-left .dropdown {
+  margin-right: 20px;
+}
+
+.navbar a {
+  
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.nav-right i {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #111;
+    border-radius: 4px;
+    min-width: 120px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 999;
+    padding: 5px 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background: #e53935;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* SEARCH BAR OVERLAY */
+.search-bar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    padding: 18px 40px;
+    z-index: 9999;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar-overlay.active {
+    display: flex;
+}
+
+.search-bar-overlay input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #333;
+    color: white;
+    outline: none;
+}
+
+.search-bar-overlay input::placeholder {
+    color: #aaa;
+}
+
+.search-bar-overlay .fa-times {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  min-height: 92vh;
+  padding-bottom: 90px;
+  padding-top: 10px;
+  background: #0A0A0A;
+background-image:
+  radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px),
+  radial-gradient(ellipse at 50% 50%, rgba(223,44,41,0.2) 0%, transparent 60%);
+background-size: 20px 20px, auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: 80px;
+}
+
+.hero-content h1 {
+  font-family: 'Michroma', sans-serif; text-transform: uppercase;
+  font-size: 43px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  font-family: 'Michroma', sans-serif;
+  display: inline-block;
+  padding: 12px 25px;
+  background: #df2c29;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background: #c62828;
+}
+
+.hero-image {
+  margin-left: 100px;
+}
+
+.hero-image img {
+  width: 500px;
+}
+
+/* ============================================
+   BRANDS SECTION
+   ============================================ */
+/* ============================================
+   BRANDS SECTION - AMBIENT REVEAL STYLE
+   ============================================ */
+.brands-section {
+  padding: 80px 10%;
+  background-color: #050505;
+  text-align: center;
+  border-top: 1px solid #141414;
+  border-bottom: 1px solid #141414;
+}
+
+.brands-title {
+  font-family: 'JetBrains Mono', monospace;
+  color: #444444;
+  font-size: 20px;
+  letter-spacing: 4px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.brands-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* Clean dynamic grid spacing gaps */
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.brand-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 200px;  /* Change this to change the overall size of the logo spaces */
+  height: 100px;  /* Vertically aligns different logos on an invisible baseline */
+  
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-card img {
+  max-width: 100%;   /* Prevents images from bleeding out of the card container */
+  max-height: 100%;  /* Locks vertical limit securely */
+  object-fit: contain; /* Automatically preserves aspect ratio flawlessly */
+  
+  transition: all 0.3s ease;
+}
+
+/* Wakes up into full color and brightness smoothly */
+.brands-grid img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+.site-footer {
+    background-color: #0a0a0a;
+    padding: 60px 40px 20px 40px;
+    border-top: 2px solid #1a1a1a;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #222;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-brand h2 {
+    font-family: 'Michroma', sans-serif; text-transform: uppercase; letter-spacing: 2px;
+    font-size: 25px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.text-red {
+    color: #e53935;
+}
+
+.footer-brand p {
+    color: #888;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.footer-links-group {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-col h3 {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #888;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555;
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-legal a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+    color: #e53935;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+/* Typography */
+.michroma {
+    font-family: 'Michroma', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+/* Container Spacing */
+.about-container {
+    background-color: #0A0A0A;
+    background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(223,44,41,0.10) 0%, transparent 45%),
+    radial-gradient(ellipse at 100% 100%, rgba(223,44,41,0.10) 0%, transparent 45%),
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: auto, auto, 20px 20px;
+    padding: 80px 10%;
+    color: #ffffff;
+}
+
+/* Intro Section */
+.about-intro {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.about-intro h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.intro-line {
+    width: 60px;
+    height: 3px;
+    background: #e53935; /* Red accent */
+    margin: 0 auto 30px;
+}
+
+.intro-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #cccccc;
+}
+
+/* Services Layout */
+.services-section {
+    border-top: 1px solid #222;
+    padding-top: 60px;
+}
+
+.services-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 60px;
+}
+
+.service-block {
+    margin-bottom: 80px;
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    color: #e53935;
+}
+
+/* Full Image Grid */
+.full-image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.full-image-grid img {
+    width: 100%;
+    height: 450px; /* High visibility for your project photos */
+    object-fit: cover;
+    border: 1px solid #333;
+    transition: border-color 0.3s ease;
+}
+
+.full-image-grid img:hover {
+    border-color: #e53935;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .full-image-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .full-image-grid img {
+        height: 300px;
+    }
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
+/* Main Page Workspace */
+.contact-container {
+    background-color: #0A0A0A;
+    background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(223,44,41,0.10) 0%, transparent 45%),
+    radial-gradient(ellipse at 100% 100%, rgba(223,44,41,0.10) 0%, transparent 45%),
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: auto, auto, 20px 20px;
+    padding: 80px 10%;
+    color: #ffffff;
+    min-height: calc(100vh - 120px);
+}
+
+/* Header Text Alignments */
+.contact-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-intro h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.intro-line {
+    width: 60px;
+    height: 3px;
+    background: #e53935; /* Red Theme Core Accent */
+    margin: 0 auto 30px;
+}
+
+.intro-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #cccccc;
+}
+
+/* Content Splitting Grid */
+.contact-content-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 40px;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 40px;
+}
+
+.sub-panel-title {
+    font-size: 16px;
+    color: #666666; /* Subdued technical headers */
+    margin-bottom: 30px;
+}
+
+/* Interactive Connection Rows */
+.contact-links-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-link-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.contact-link-item i {
+    font-size: 20px;
+    color: #e53935; /* Crisp glowing red markers */
+    width: 25px;
+    text-align: center;
+}
+
+.link-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.link-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #666666;
+    letter-spacing: 0.5px;
+}
+
+.link-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    color: #dddddd;
+    margin-top: 2px;
+    transition: color 0.3s ease;
+}
+
+/* Active Hover Transitions */
+.contact-link-item:hover {
+    background: #111111;
+    border-color: #e53935;
+    transform: translateX(4px); /* Sleek shift right action */
+}
+
+.contact-link-item:hover .link-value {
+    color: #ffffff;
+}
+
+/* Embedded Technical Map Styling */
+.contact-map-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    padding: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.map-wrapper iframe {
+    filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%); /* Dark tactical map override */
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.map-wrapper:hover {
+    border-color: #e53935;
+}
+
+/* Responsive Structural Fallback */
+@media (max-width: 900px) {
+    .contact-content-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .map-wrapper {
+        height: 350px;
+    }
+}
+
+/* ============================================
+   PRODUCT PAGES (CCTV & SOLAR)
+   ============================================ */
+
+
+
+/* Main Page Container Workspace */
+.cctv-page {
+  min-height: 100vh;
+  background: #0A0A0A;
+  background-image:
+  radial-gradient(ellipse at 0% 35%, rgba(223,44,41,0.10) 0%, transparent 45%),
+  radial-gradient(ellipse at 100% 70%, rgba(223,44,41,0.10) 0%, transparent 45%),
+  radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+background-size: auto, auto, 20px 20px;
+  color: #ffffff;
+  padding: 80px 5%;
+}
+
+/* Page Intro System Header Styles */
+.product-page-title {
+  font-family: 'Michroma', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 50px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -50px;
+  
+}
+
+.product-page-line {
+  width: 60px;
+  height: 3px;
+  background: #e53935; /* Signature Core Red Theme Line */
+  margin: 0 auto 60px;
+}
+
+
+
+/* Precise Engineered Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px; /* Tight grid structure for clean matrix grid look */
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Sharp Industrial Card Interface */
+.product-card {
+  background: #0a0a0a; /* Deep dark gray card background surfaces */
+  border: 1px solid #1a1a1a; /* Fine technical grid outlines */
+  border-radius: 0px; /* Stripped out bubbly rounded corners completely */
+  padding: 20px;
+  text-align: left;
+  color: #ffffff;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Clean Image Frame Well Container */
+.product-card img {
+  width: 100%;
+  height: 220px; /* Fixed vertical boundary aspect for symmetry alignment */
+  object-fit: contain;
+  background: #050505; /* Isolated solid element backdrop */
+  border: 1px solid #121212;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+/* Structured Clean Typography */
+.product-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #dddddd;
+  margin: 0 0 15px 0;
+  min-height: 45px;
+  
+  /* THE FIX: These 4 layout rules must sit together to validate properly */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Bottom Metric Data Line Row */
+.product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #1a1a1a; /* Clean internal grid breakdown rule */
+  padding-top: 15px;
+}
+
+/* Technical Monospace Metrics Pricing */
+.price {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* System Action Vector Triggers */
+.product-bottom i {
+  color: red; /* Default dim appearance blends inside tech matrix */
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Active Hover Card Target Tracker Actions */
+.product-card:hover {
+  background: #141414; /* Smoothly lights up card container body background */
+  transform: translateY(-4px);
+}
+
+.product-card:hover img {
+  transform: scale(1.02); /* Clean, micro camera scaling adjustment */
+}
+
+.product-card:hover .product-name {
+  color: #ffffff;
+}
+
+.product-card:hover .product-bottom i {
+  color: #e53935; /* Highlights red on container contact interaction */
+}
+
+.product-bottom i:hover {
+  transform: scale(1.25);
+  color: #ff3333; /* Ultra vibrant activation click-state glow */
+}
+
+/* ============================================
+   PRODUCT DETAIL PAGE
+   ============================================ */
+
+/* ============================================
+   PREMIUM HIGH-TECH SINGLE PRODUCT VIEW
+   ============================================ */
+
+.product-detail {
+  min-height: 100vh;
+  background: #0A0A0A;
+  background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(223,44,41,0.10) 0%, transparent 45%),
+    radial-gradient(ellipse at 100% 100%, rgba(223,44,41,0.10) 0%, transparent 45%),
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: auto, auto, 20px 20px; /* Pure black baseline */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 5%;
+}
+
+/* Hard-edged Master Frame Container */
+.product-box {
+  position: relative;
+  background: #0a0a0a; /* Dark gray surface */
+  border: 1px solid #1a1a1a; /* Fine wireframe layout lines */
+  border-radius: 0px; /* Absolutely no rounded circles */
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  width: 100%;
+  max-width: 1250px;
+  max-height: 90vh; 
+  box-sizing: border-box;
+}
+
+/* Sharp Back Action Anchor Button */
+.back-btn {
+  position: absolute;
+  top: 40px;      /* Aligned with the top padding of the product box */
+  right: 40px;    /* MOVED TO RIGHT SIDE: perfectly flush with the inner content padding */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #141414;
+  color: #888888;
+  border: 1px solid #222222;
+  border-radius: 0px; /* Sharped edge button */
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #e53935; /* Signature glowing red on engagement */
+  border-color: #e53935;
+  color: #ffffff;
+}
+
+.back-btn:hover {
+  background: #e53935; /* Signature glowing red on engagement */
+  border-color: #e53935;
+  color: #ffffff;
+}
+
+/* Left Graphic Window Pane */
+.product-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image-frame {
+  width: 100%;
+  height: 480px;
+  background: #050505; /* Isolated asset well block background */
+  border: 1px solid #141414;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Right Metrics Content Column */
+.product-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.product-meta-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #e53935; /* Accent red system code tracer */
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.product-right h1 {
+  font-family: 'Michroma', sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  font-size: 28px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+#product-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 25px 0;
+}
+
+.product-divider {
+  width: 100%;
+  height: 1px;
+  background: #1a1a1a;
+  margin-bottom: 25px;
+}
+
+#product-desc {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #b3b3b3;
+  margin: 0 0 35px 0;
+}
+
+/* Information Attribute Specs Matrix */
+.product-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.info-cell {
+  background: #050505;
+  border: 1px solid #141414;
+  padding: 12px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cell-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #555555;
+  letter-spacing: 1px;
+}
+
+.cell-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.in-stock {
+  color: #4caf50; /* Clean tech green indicators */
+}
+
+/* User Operational Control Inputs Block Row */
+.interaction-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Quantity Adjuster Pod */
+.quantity-picker {
+  display: flex;
+  align-items: center;
+  background: #050505;
+  border: 1px solid #141414;
+  height: 48px;
+}
+
+.quantity-picker button {
+  width: 45px;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: #888888;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.quantity-picker button:hover {
+  color: #ffffff;
+  background-color: #111111;
+}
+
+#qty {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  width: 40px;
+  text-align: center;
+}
+
+/* Core Functional Primary Action Button */
+.add-to-cart-btn {
+  flex: 1;
+  height: 48px;
+  background: #e53935; /* Core accent signature surface */
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 0px; /* Stripped rounding out */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: #ff3333; /* Glow level active trigger up shift */
+}
+
+/* Screen Size Media Break Fallbacks */
+@media (max-width: 992px) {
+  .product-box {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .product-image-frame {
+    height: 350px;
+  }
+  
+  .product-info-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* ============================================
+   PREMIUM HIGH-TECH CART OVERLAY
+   ============================================ */
+
+.cart-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1999;
+  display: none;
+}
+
+.cart-backdrop.active {
+  display: block;
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hidden off-screen to the right side */
+  width: 420px;
+  height: 100vh;
+  background: #0a0a0a;
+  border-left: 1px solid #1a1a1a;
+  z-index: 2000;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  text-align: left;
+}
+
+/* FIXED: Moves panel onto the screen from the right side */
+.cart-overlay.active {
+  transform: translateX(-450px); 
+}
+
+.cart-header {
+  padding: 30px 25px 15px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #141414;
+}
+
+.tab {
+  padding: 6px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0px;
+  background: #e53935;
+  border: 1px solid #141414;
+  white-space: nowrap;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  color: #ffffff;
+  border-color: #333333;
+}
+
+.tab.active {
+  background: #e53935;
+  color: #ffffff;
+  border-color: #e53935;
+}
+
+.cart-body {
+  overflow-y: auto;
+  flex: 1;           /* Let flexbox handle the height naturally */
+  min-height: 0;     /* Critical — allows flex children to shrink */
+  padding: 10px 25px;
+  box-sizing: border-box;
+  /* REMOVE the max-height: calc(...) line entirely */
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.category-header h3 {
+  font-family: 'Michroma', sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  background: #050505;
+  border: 1px solid #141414;
+  padding: 15px;
+}
+
+.cart-item img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  background: #000000;
+  border: 1px solid #111111;
+  border-radius: 0px;
+  padding: 5px;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.item-details p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+  color: #ffffff;
+}
+
+.item-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  color: #888888;
+}
+
+.qty-box {
+  display: flex;
+  align-items: center;
+  background: #000000;
+  border: 1px solid #141414;
+}
+
+.qty-box button {
+  padding: 3px 10px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #666666;
+  transition: all 0.2s ease;
+}
+
+.qty-box button:hover {
+  background: #111111;
+  color: #ffffff;
+}
+
+.qty-box span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #ffffff;
+  min-width: 24px;
+  text-align: center;
+}
+
+.cart-footer {
+  padding: 25px;
+  border-top: 1px solid #1a1a1a;
+  background: #050505;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.select-all {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.select-all input[type="checkbox"] {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #333333;
+  background: #000000;
+  cursor: pointer;
+  position: relative;
+}
+
+.select-all input[type="checkbox"]:checked {
+  background: #e53935;
+  border-color: #e53935;
+}
+
+.select-all label {
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #888888;
+  letter-spacing: 1px;
+}
+
+.total-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.checkout-btn {
+  width: 100%;
+  height: 50px;
+  background: #e53935;
+  color: #ffffff;
+  border: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background: #ff3333;
+}
+
+#checkout-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+}
+
+.delete-btn {
+  background: transparent;
+  color: #444444;
+  border: 1px solid #141414;
+  padding: 4px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0px;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #e53935;
+  border-color: #e53935;
+  color: #ffffff;
+}
+
+
+/* ============================================
+   PROFILE PANEL OVERLAY
+   ============================================ */
+
+.profile-overlay {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    height: 100vh;
+    background: #0a0a0a;
+    border-left: 1px solid #1a1a1a;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 9999;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox — hidden by default */
+}
+
+/* Chrome/Safari — hidden by default */
+.profile-overlay::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Scrollbar visible only in edit mode ── */
+.profile-overlay.editing {
+    scrollbar-width: thin; /* Firefox — default browser color */
+}
+
+.profile-overlay.editing::-webkit-scrollbar {
+    display: block;
+    width: 6px;
+}
+
+.profile-overlay.active {
+    transform: translateX(-400px);
+}
+
+.profile-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 9998;
+}
+
+.profile-backdrop.active {
+    display: block;
+}
+
+/* ── Avatar ── */
+.profile-icon-wrap {
+    text-align: center;
+    padding: 10px 0 15px;
+}
+
+.profile-avatar {
+    font-size: 64px;
+    color: #e53935;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.profile-customer-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-customer-id strong {
+    color: #e53935;
+}
+
+.profile-overlay hr {
+    border: 0;
+    border-top: 1px solid #e53935;
+    margin: 0 0 25px 0;
+    width: 40px;
+}
+
+/* ── Fields ── */
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.profile-field label {
+    font-family: 'Michroma', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #555555;
+    letter-spacing: 1px;
+}
+
+/* Value span — visible by default */
+.profile-field .profile-val {
+    font-family: 'Michroma', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    background: #050505;
+    border: 1px solid #141414;
+    padding: 12px 15px;
+    display: block;
+    word-break: break-all;
+    min-height: 20px;
+}
+
+/* Input — hidden by default, shown in edit mode via JS */
+.profile-field .profile-inp {
+    display: none;
+    font-family: 'Michroma', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    background: #000000;
+    border: 1px solid #e53935;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    border-radius: 0;
+    transition: border-color 0.2s ease;
+}
+
+.profile-field .profile-inp:focus {
+    border-color: #ff5252;
+}
+
+#current-password-section,
+#password-section,
+#confirm-password-section {
+    display: none;
+}
+
+#current-password-section .profile-inp,
+#password-section .profile-inp,
+#confirm-password-section .profile-inp {
+    display: block;
+}
+
+/* ── Feedback message ── */
+#profile-msg {
+    font-size: 13px;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 10px;
+    display: none;
+    padding: 10px 14px;
+    border-left: 3px solid currentColor;
+}
+
+/* ── Buttons ── */
+.profile-overlay .button-row {
+    margin-top: auto;
+    display: flex;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+.btn-black {
+    flex: 1;
+    height: 46px;
+    background: #141414;
+    color: #ffffff;
+    border: 1px solid #222222;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 0px;
+    transition: all 0.2s ease;
+}
+
+.btn-black:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+.btn-red {
+    flex: 1;
+    height: 46px;
+    background: transparent;
+    color: #e53935;
+    border: 1px solid #1a1a1a;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 0px;
+    transition: all 0.2s ease;
+}
+
+.btn-red:hover {
+    background: #e53935;
+    border-color: #e53935;
+    color: #ffffff;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .hero-content-wrapper {
+    flex-direction: column;
+    margin-left: 0;
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-image {
+    margin-left: 0;
+  }
+
+  .hero-image img {
+    width: 300px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-box {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .product-left img {
+    width: 100%;
+  }
+
+  .cart-overlay {
+    width: 100%;
+    right: -100%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+

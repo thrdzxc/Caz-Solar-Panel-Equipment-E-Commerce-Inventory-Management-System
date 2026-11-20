@@ -1,0 +1,200 @@
+/* Teal glass reading surfaces over the shared solar/security artwork. */
+body.caz-themed {
+  --glass-panel:rgba(9,52,54,.82);
+  --glass-soft:rgba(100,199,201,.10);
+  --glass-line:rgba(181,245,247,.3);
+  --glass-text:#f2fefe;
+  --glass-muted:#c4e8e9;
+}
+/* The original transparent logo sits directly on the wallpaper. */
+body.caz-themed .hero-image,body.caz-themed .hero-image:hover {
+  background:transparent !important; border:0; box-shadow:none;
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+body.caz-themed .hero-image img { background:transparent; }
+/* Authentication keeps the wallpaper visible without weakening field contrast. */
+body.caz-themed.portal-body .login-card {
+  background:rgba(9,52,54,.62); border:1px solid rgba(182,245,246,.38);
+  color:var(--glass-text); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  box-shadow:0 22px 65px #02252755; color-scheme:dark;
+}
+body.caz-themed .login-card :is(.auth-heading,.page-title,h1,h2) { color:#f2fefe !important; }
+body.caz-themed .login-card :is(.input-group label,.page-subtitle,.field-label,.hint-text) { color:#cbedee !important; }
+body.caz-themed .login-card :is(input:not([type=checkbox]):not([type=radio]):not([type=hidden]),select,textarea) {
+  background:rgba(11,58,60,.55) !important; border-color:#adf1f36b !important; color:#f2fefe !important;
+  font-size:16px; min-height:48px;
+}
+body.caz-themed .login-card :is(input,textarea)::placeholder { color:#bfe4e5 !important; opacity:1; }
+body.caz-themed .login-card :is(input,select,textarea):focus { border-color:#affafb !important; outline:2px solid #a7f9fa55 !important; outline-offset:2px; }
+body.caz-themed .login-card input:autofill { background:#1a5456 !important; color:#f2fefe !important; }
+body.caz-themed .login-card input:-webkit-autofill { -webkit-text-fill-color:#f2fefe; -webkit-box-shadow:0 0 0 1000px #1a5456 inset; caret-color:#ffffff; }
+body.caz-themed .login-card .login-btn { background:rgba(166,39,61,.75) !important; border:1px solid #ef9fb18c !important; min-height:50px; }
+body.caz-themed .login-card .login-btn:hover { background:rgba(185,45,69,.9) !important; }
+body.caz-themed .login-card p[style*="#ff5252"] { color:#ffced7 !important; background:#bd3e5b24 !important; border-color:#efa3b67a !important; }
+body.caz-themed .login-card p[style*="#4bb543"] { color:#c8f6db !important; background:#2b946224 !important; border-color:#9bdeb97a !important; }
+body.caz-themed .hero-actions .btn { background:rgba(166,43,64,.65) !important; border-color:#ed9bad !important; }
+body.caz-themed .hero-actions .btn-black,
+body.caz-themed .hero-actions .btn.secondary { background:rgba(132,229,231,.12) !important; color:var(--glass-text) !important; border-color:#bdfafca6 !important; }
+/* Shared navigation and administration overview. */
+body.caz-themed .navbar.caz-navigation { background:rgba(8,50,52,.85); border-color:var(--glass-line); }
+body.caz-themed .caz-navigation a,body.caz-themed .caz-brand small { color:#dcf7f8; }
+body.caz-themed .caz-brand > span { color:#fff0f3; }
+body.caz-themed .caz-nav-links a:hover { background:#b7fafb1c; color:#ffffff; }
+body.caz-themed .caz-nav-links a[aria-current=page] { background:rgba(154,42,68,.38); color:#ffd9e1; }
+body.caz-themed .nav-action { background:#c7fbfc0d; color:#e8fdfe; border-color:#b8f4f766; }
+body.caz-themed .nav-action:hover { background:#b7fafb24; border-color:#ccfbfc; }
+body.caz-themed .nav-cart-action { background:rgba(28,115,79,.22); color:#c5f9dd; border-color:#90d8b477; }
+body.caz-themed .nav-cart-action:hover { background:rgba(34,143,94,.4); color:#ecfff3; }
+body.caz-themed :is(.caz-dashboard-intro,.caz-management-card) {
+  background:rgba(9,52,54,.58); border-color:var(--glass-line); color:var(--glass-text);
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+}
+body.caz-themed :is(.caz-dashboard-intro h1,.caz-management-card h2) { color:var(--glass-text); }
+body.caz-themed :is(.caz-dashboard-intro p,.caz-management-card p) { color:var(--glass-muted); }
+body.caz-themed .caz-dashboard-intro .caz-eyebrow { color:#a9f9fa; }
+body.caz-themed .caz-management-card > i { background:#b9f9fb17; color:#adfafb; }
+body.caz-themed .caz-management-card span { color:#bdfbfc; }
+body.caz-themed .caz-management-card:hover { background:rgba(17,78,81,.75); border-color:#b9fafb99; }
+/* Drawers retain a stronger tint than cards so account/order text stays legible. */
+body.caz-themed :is(.profile-overlay,.cart-overlay) {
+  background:var(--glass-panel); color:var(--glass-text); border-color:var(--glass-line);
+  backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); color-scheme:dark;
+}
+body.caz-themed :is(.profile-overlay,.cart-overlay) :is(h1,h2,h3,.drawer-title-row h2) { color:var(--glass-text); }
+body.caz-themed :is(.cart-header,.cart-footer,.cart-item,.profile-photo-editor) { background:var(--glass-soft); border-color:var(--glass-line); }
+body.caz-themed .drawer-close { background:#b3f9fb15; border-color:var(--glass-line); color:#f0fefe; }
+body.caz-themed .drawer-close:hover { background:#b3f9fb30; }
+body.caz-themed :is(.profile-field label,.profile-customer-id,.profile-photo-help) { color:var(--glass-muted) !important; }
+body.caz-themed .profile-customer-id :is(span,strong) { color:#ffc3d0 !important; }
+body.caz-themed .profile-field .profile-val,body.caz-themed .profile-field > span {
+  background:rgba(177,242,243,.08) !important; color:var(--glass-text) !important; border-color:var(--glass-line);
+}
+body.caz-themed .profile-overlay :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),textarea,select) {
+  background:rgba(12,60,62,.7) !important; color:var(--glass-text) !important; border-color:#b6f9fb88 !important;
+}
+body.caz-themed .profile-overlay :is(input,textarea)::placeholder { color:#b7dcdd !important; }
+body.caz-themed .profile-overlay p[style*="color"] { color:var(--glass-muted) !important; }
+body.caz-themed .profile-photo-preview { background:#99dcba20; color:#c0f3d7; border-color:#a4d9c66b; box-shadow:0 0 0 1px #b3f9fb44; }
+body.caz-themed .profile-photo-title { color:var(--glass-text); }
+body.caz-themed .profile-photo-button { background:rgba(86,177,137,.14); color:#cbf8e0; border-color:#91d6b77a; }
+body.caz-themed .profile-photo-button:hover { background:rgba(86,177,137,.3); color:#f1fff7; }
+body.caz-themed .profile-photo-button-remove { color:#ffd0da; border-color:#e4a3b177; background:#b341611a; }
+body.caz-themed .profile-photo-status { color:#bbefd3; }
+body.caz-themed .profile-photo-status[data-state=error] { color:#ffbac9; }
+body.caz-themed .profile-overlay .button-row button { background:#b0f0f11a; color:#f1fefe; border-color:#b7f0f277; }
+body.caz-themed .profile-overlay .btn-black { background:#b0f0f11a !important; color:#f1fefe !important; border-color:#b7f0f277 !important; }
+body.caz-themed .profile-overlay .btn-black:hover { background:#b0f0f133 !important; }
+body.caz-themed #saved-addresses-list :is(p,span) { color:#c4e8e9 !important; font-size:15px !important; }
+body.caz-themed #saved-addresses-list > div { border-color:var(--glass-line) !important; }
+body.caz-themed .cart-tabs .tab { background:#bdfafc0d; border-color:#c5f7f855; color:#e0f6e9; }
+body.caz-themed .cart-tabs .tab:hover { background:#9adcb625; color:#f1fff7; }
+body.caz-themed .cart-tabs .tab.active { background:rgba(34,119,83,.62); color:#ffffff; border-color:#a6e4c3; }
+body.caz-themed :is(.item-details p,.item-price-row,.qty-box span,.select-all label) { color:var(--glass-text); }
+body.caz-themed .cart-overlay :is(.qty-box,.cart-item img) { background:#d8fcfd0d; border-color:var(--glass-line); }
+body.caz-themed .cart-overlay .qty-box button { background:transparent; color:#e5fdfe; }
+body.caz-themed .cart-overlay .qty-box button:hover { background:#bdfafc29; }
+body.caz-themed .cart-overlay .category-header { border-color:var(--glass-line); }
+body.caz-themed .cart-overlay .category-header h3 { color:#c7f4dc; }
+body.caz-themed .cart-overlay .total-price { color:#bdffdd; }
+body.caz-themed .cart-overlay .delete-btn { background:#c64b6a1c; color:#ffd1db; border-color:#ec9aad66; }
+body.caz-themed .cart-checkout-notice { background:rgba(30,96,69,.4); border-color:#9bdfb96b; color:#dbf4e6; }
+body.caz-themed .cart-checkout-notice :is(strong,p) { color:#dcffec; }
+body.caz-themed .cart-checkout-notice :is(button,a) { background:#a9e7c416; border-color:#ade2c377; color:#e7fff0; }
+/* Add-to-cart, checkout and confirmation dialogs. */
+body.caz-themed :is(.caz-modal-overlay,#caz-confirm-overlay) { background:rgba(2,27,28,.4) !important; }
+body.caz-themed :is(.caz-modal-box,#caz-confirm-box) {
+  background:rgba(9,52,54,.91) !important; color:var(--glass-text); border-color:#cafbfc66 !important;
+  backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); color-scheme:dark;
+}
+body.caz-themed :is(.caz-modal-label,#caz-confirm-title,#caz-confirm-msg,.caz-cart-product-title,.caz-checkout-item-title,.caz-checkout-item-price) { color:var(--glass-text); }
+body.caz-themed :is(.caz-cart-product-meta,.caz-cart-qty-label,.caz-cart-total-label,.caz-checkout-total-label,.caz-quote-status) { color:var(--glass-muted); }
+body.caz-themed .caz-modal-box :is(p,span,label,strong,div)[style*="color"],
+body.caz-themed #caz-confirm-box :is(p,span,label,strong,div)[style*="color"] { color:var(--glass-muted) !important; }
+body.caz-themed :is(.caz-cart-total-amount,.caz-checkout-total-amount) { color:#b7f8d5; }
+body.caz-themed :is(.caz-cart-product,.caz-cart-qty-row,.caz-cart-total-row,.caz-checkout-item,.caz-checkout-total,.checkout-addresses) { border-color:var(--glass-line); }
+body.caz-themed .caz-modal-box img { background:#bcf9fb0b; border-color:var(--glass-line); }
+body.caz-themed :is(.caz-cart-qty-ctrl,.caz-cart-qty-ctrl button) { background:#b9f9fb13; border-color:var(--glass-line); }
+body.caz-themed :is(.caz-cart-qty-ctrl button,.caz-cart-qty-ctrl span,.checkout-quantity span) { color:var(--glass-text); }
+body.caz-themed .caz-cart-qty-ctrl button:hover { background:#b9f9fb30; }
+body.caz-themed .caz-checkout-item-info button { background:#b1f9fb1c !important; color:#f2fefe !important; border-color:#b6f9fb66 !important; }
+body.caz-themed :is(.caz-modal-btn.secondary,.caz-confirm-btn.cancel) { background:#bdfafc15; color:#effefe; border-color:#c1fafc6b; }
+body.caz-themed :is(.caz-modal-btn.secondary,.caz-confirm-btn.cancel):hover { background:#bdfafc2a; }
+body.caz-themed :is(.checkout-addresses legend,.checkout-addresses label) { color:#def8f9; }
+body.caz-themed .caz-promo-notice { background:#78c99d16; color:#c4f9dd; border-color:#ade1c455; }
+body.caz-themed .quote-retry { background:#c783951a; color:#ffd9e2; border-color:#efa7ba77; }
+body.caz-themed :is(.caz-toast,.caz-toast-msg,.caz-toast-close) { background:#114749; color:#eefefe; border-color:#b5f4f666; }
+/* Checkout map controls stay clear; map tiles and provider labels retain their own colors. */
+body.caz-themed .caz-modal-box .delivery-picker { background:#a1f7fa0b; border-color:var(--glass-line); color:var(--glass-text); }
+body.caz-themed .caz-modal-box :is(.delivery-picker-heading,.delivery-coordinate-fields summary,.delivery-coordinate-grid label) { color:#e5fdfe; }
+body.caz-themed .caz-modal-box :is(.delivery-map-status,.delivery-location-help) { color:var(--glass-muted); }
+body.caz-themed .caz-modal-box .delivery-map-status.is-error { color:#ffc4d0; }
+body.caz-themed .caz-modal-box .delivery-pin-summary { color:#c4ffdf; }
+body.caz-themed .caz-modal-box .delivery-location-link { background:#adf4f614; color:#d9fbea; border-color:#abd8c877; }
+body.caz-themed .caz-modal-box .delivery-location-link:hover { background:#adf4f62c; }
+body.caz-themed .caz-modal-box .delivery-coordinate-grid input { background:#083637b3 !important; color:#f2fefe !important; border-color:#b0f1f37a !important; }
+body.caz-themed .caz-modal-box .delivery-coordinate-fields { border-color:var(--glass-line); }
+/* Order updates use the same readable glass treatment as checkout. */
+body.caz-themed #notif-popup { background:rgba(9,52,54,.94); color:var(--glass-text); border-color:var(--glass-line); backdrop-filter:blur(24px); color-scheme:dark; }
+body.caz-themed #notif-popup :is(.notif-header,.notif-footer) { background:#b7f9fb08; border-color:var(--glass-line); }
+body.caz-themed #notif-popup :is(.notif-title,.notif-msg,.notif-product-name) { color:var(--glass-text); }
+body.caz-themed #notif-popup :is(.notif-product-meta,.notif-date) { color:var(--glass-muted); }
+body.caz-themed #notif-popup .notif-product-price { color:#bffadd; }
+body.caz-themed #notif-popup :is(.notif-icon,.notif-badge) { background:#bf507226; color:#ffd4df; border-color:#edb5c466; }
+body.caz-themed #notif-popup :is(.notif-product-row,.notif-product-row img) { background:#b7f9fb0d; border-color:var(--glass-line); }
+body.caz-themed #notif-popup .notif-item { border-color:var(--glass-line); }
+body.caz-themed #notif-popup .notif-item:hover { background:#b7f9fb0d; }
+body.caz-themed #notif-popup .notif-items { scrollbar-color:#96c9ca #0e3f41; }
+body.caz-themed #notif-popup .notif-items::-webkit-scrollbar-track { background:#0e3f41; }
+body.caz-themed :is(.profile-overlay,.cart-overlay,.caz-modal-box,#caz-confirm-box,.caz-navigation,.caz-dashboard) :is(button,a,input,textarea):focus-visible { outline:3px solid #b6fafb !important; outline-offset:3px; }
+/* Larger navigation wraps into a second row before its actions can collide. */
+body.caz-themed .navbar.caz-navigation { min-height:98px; padding:16px 28px; gap:14px 18px; background:rgba(5,65,71,.94); }
+body.caz-themed .caz-navigation a,body.caz-themed .navbar .nav-action { font-size:17px; }
+body.caz-themed .caz-nav-links a { min-height:48px; padding:11px 13px; }
+body.caz-themed .navbar .nav-action { min-height:48px; padding:11px 14px; }
+body.caz-themed .navbar .nav-action i { font-size:18px; }
+body.caz-themed .caz-brand img { width:64px; height:58px; }
+body.caz-themed .caz-brand > span { font-size:26px; }
+body.caz-themed .caz-brand small { font-size:12px; }
+body.caz-themed .caz-nav-links a[aria-current=page] { background:rgba(173,245,237,.17); color:#fff; box-shadow:inset 0 0 0 1px #b1eae45c; }
+/* Text on the brighter artwork gets its own translucent reading area. */
+body.caz-themed :is(.hero-content,.about-intro,.caz-page-heading,.messages-heading,.promo-page-heading) {
+  background:rgba(4,62,68,.7); border:1px solid #c7ffff36; border-radius:22px;
+  padding:clamp(20px,2.4vw,30px); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+}
+body.caz-themed :is(.hero-description,.catalog-description,.about-intro .intro-text,.caz-page-heading p,.messages-heading p,.promo-page-heading p) { color:#edffff !important; }
+body.caz-themed :is(.hero-eyebrow,.catalog-eyebrow,.caz-eyebrow,.messages-eyebrow,.promo-eyebrow) { color:#c7fff2 !important; }
+body.caz-themed .catalog-description { display:table; background:rgba(4,62,68,.76); border-radius:12px; padding:10px 14px; }
+body.caz-themed :is(.contact-intro,.contact-link-item,.brands-section) { background:rgba(5,65,71,.78); color:#f2ffff; border-color:#c1f4ef55; }
+body.caz-themed :is(.contact-intro h1,.brands-title,.link-value) { color:#f2ffff !important; }
+body.caz-themed :is(.contact-intro .intro-text,.contact-link-item .link-label) { color:#d1f2ef !important; }
+body.caz-themed .contact-link-item i { color:#9bf4e5; }
+body.caz-themed .contact-link-item:hover { background:rgba(8,79,83,.9); }
+body.caz-themed .contact-link-item:hover .link-value { color:#fff; }
+body.caz-themed .brand-card.brand-card-contrast { background:#286568; border-color:#8ad4cc66; }
+body.caz-themed .map-wrapper { background:rgba(5,65,71,.7); border-color:#c1f4ef55; }
+body.caz-themed :is(.profile-overlay,.cart-overlay) { background:rgba(7,61,65,.96); }
+body.caz-themed :is(.caz-modal-box,#caz-confirm-box) { background:rgba(7,61,65,.96) !important; }
+body.caz-themed.portal-body .login-card { background:rgba(5,59,64,.84); }
+body.caz-themed .login-card :is(.address-box,.address-box-title) { background:rgba(12,76,80,.45); color:#e5fffb !important; border-color:#bce9e655; }
+body.caz-themed .login-card .error-msg { color:#ffe2e7; background:#9e254633; border-color:#ffacba; }
+body.caz-themed .login-card .address-box label { color:#d5f4f1 !important; }
+body.caz-themed .catalog-select-menu { background:rgba(7,66,70,.98); }
+body.caz-themed .catalog-filters { background:rgba(5,60,65,.85); }
+body.caz-themed .site-footer { background:rgba(4,54,60,.93); }
+@media(max-width:1380px) {
+  body.caz-themed .caz-nav-links { order:3; width:100%; justify-content:center; }
+  body.caz-themed .caz-nav-actions { margin-left:auto; }
+}
+@media(max-width:650px) {
+  body.caz-themed .navbar.caz-navigation { padding:12px 14px; min-height:86px; gap:10px; }
+  body.caz-themed .caz-brand img { width:48px; height:46px; }
+  body.caz-themed .caz-brand > span { font-size:23px; }
+  body.caz-themed .caz-brand small { font-size:11px; }
+  body.caz-themed .caz-navigation .caz-nav-links { justify-content:flex-start; gap:4px; }
+  body.caz-themed .caz-navigation .caz-nav-links a { font-size:16px; padding:9px 10px; min-height:44px; }
+  body.caz-themed .navbar .nav-action { padding:10px; min-width:44px; }
+}
+@media print {
+  body.caz-themed :is(.caz-dashboard-intro,.caz-management-card) { background:#ffffff; color:#193738; }
+  body.caz-themed :is(.caz-dashboard-intro,.caz-management-card) :is(h1,h2,p,span) { color:#193738 !important; }
+}

@@ -1,0 +1,57 @@
+/* Camera types stay visible instead of opening a browser-styled option menu. */
+body.caz-admin .camera-types {
+  min-width: 0;
+  margin: 0 0 18px;
+  padding: 18px;
+  border: 1px solid #d9e1eb;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #f7f9fc, #fdf7f8);
+}
+body.caz-admin .camera-types legend {
+  padding: 0 8px;
+  color: #3b4c62;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+body.caz-admin .camera-type-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+body.caz-admin .camera-type-option { position: relative; min-width: 0; cursor: pointer; }
+body.caz-admin .camera-type-option input {
+  position: absolute; width: 1px; height: 1px; margin: 0;
+  opacity: 0; overflow: hidden;
+}
+body.caz-admin .camera-type-card {
+  display: flex; align-items: center; gap: 12px;
+  min-height: 70px; padding: 14px 16px;
+  background: #fff; color: #34465e;
+  border: 1px solid #cdd7e4; border-radius: 12px;
+  font-size: 15px; font-weight: 600; line-height: 1.4;
+  transition: border-color .15s, background-color .15s, box-shadow .15s;
+}
+body.caz-admin .camera-type-symbol {
+  display: grid; place-items: center; flex: 0 0 34px; height: 34px;
+  border-radius: 9px; background: #eff3f8; color: #52667f;
+}
+body.caz-admin .camera-type-symbol svg { width: 22px; height: 22px; }
+body.caz-admin .camera-type-name { flex: 1; overflow-wrap: anywhere; }
+body.caz-admin .camera-type-check { opacity: 0; font-size: 18px; }
+body.caz-admin .camera-type-option:hover .camera-type-card { border-color: #b45a69; background: #fffafb; }
+body.caz-admin .camera-type-option input:checked + .camera-type-card {
+  border-color: #ac2d3d; background: #fff0f3; color: #92283a;
+  box-shadow: 0 0 0 1px #ac2d3d;
+}
+body.caz-admin .camera-type-option input:checked + .camera-type-card .camera-type-symbol { background: #f9dce3; color: #92283a; }
+body.caz-admin .camera-type-option input:checked + .camera-type-card .camera-type-check { opacity: 1; }
+body.caz-admin .camera-type-option input:focus-visible + .camera-type-card { outline: 3px solid #3276a7; outline-offset: 4px; }
+body.caz-admin .filter-row.camera-secondary-filters { display: flex; flex-wrap: wrap; }
+body.caz-admin .camera-secondary-filters select:not([hidden]) { flex: 1 1 150px; min-width: 0; }
+body.caz-admin select[hidden] { display: none !important; }
+@media (max-width: 540px) {
+  body.caz-admin .camera-types { padding: 12px; }
+  body.caz-admin .camera-type-options { grid-template-columns: 1fr; gap: 8px; }
+  body.caz-admin .camera-type-card { min-height: 58px; padding: 10px 12px; }
+}

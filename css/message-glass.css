@@ -1,0 +1,34 @@
+/* Customer and admin conversations share high-contrast glass surfaces. */
+body.caz-themed .messages-page { --msg-ink:#f1fefe; --msg-muted:#c0e5e6; --msg-line:rgba(181,246,248,.26); }
+body.caz-themed .messages-shell { background:rgba(7,48,50,.76); color:var(--msg-ink); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); color-scheme:dark; }
+body.caz-themed .messages-sidebar { background:rgba(16,71,73,.32); }
+body.caz-themed :is(.messages-conversation,.messages-history) { background:transparent; }
+body.caz-themed :is(.messages-thread-heading,.messages-compose) { background:rgba(16,67,69,.45); }
+body.caz-themed :is(.messages-heading-tag,.messages-service-note) { background:#b8f9fb0d; border-color:var(--msg-line); color:#def4e8; }
+body.caz-themed .messages-heading-tag span { color:#b6ffd6; }
+body.caz-themed .messages-page :is(.messages-icon-button,.messages-quick-topics button,.messages-earlier,.messages-recipient) { background:#adf4f610 !important; border-color:var(--msg-line); color:#e8fdfe !important; }
+body.caz-themed .messages-page :is(.messages-icon-button,.messages-quick-topics button,.messages-earlier,.messages-recipient):hover { background:#adf4f628 !important; border-color:#bffafc77; color:#ffffff !important; }
+body.caz-themed .messages-page .messages-text-button { color:#bcfafb !important; }
+body.caz-themed .messages-page .messages-inbox-item:hover { background:#b5f9fb16 !important; }
+body.caz-themed .messages-page .messages-inbox-item.is-selected { background:rgba(49,154,156,.25) !important; border-color:#aef9fb66; }
+body.caz-themed .messages-avatar { background:#acf9fb1c; color:#c8fcfc; }
+body.caz-themed .messages-page :is(.messages-brand-avatar,.messages-sender-logo) { background:transparent; border-color:#c2fafc33; }
+body.caz-themed .messages-page .messages-brand-avatar img { filter:none; }
+body.caz-themed .messages-page .messages-service-note :is(strong,p) { color:#d8f8f9 !important; }
+body.caz-themed .messages-connection { background:rgba(64,140,100,.21); color:#bff5d6; }
+body.caz-themed .messages-connection.is-offline { background:rgba(136,104,40,.26); color:#ffe4aa; }
+body.caz-themed .messages-page .messages-empty h3 { color:#e4fdfe !important; }
+body.caz-themed .messages-empty > span { background:#bbf9fb10; border-color:var(--msg-line); color:#bdfafc; }
+body.caz-themed .messages-day { color:#c2ebed !important; }
+body.caz-themed .messages-bubble { background:rgba(64,151,154,.2); border-color:#b6f9fb45; color:#eefefe; }
+body.caz-themed .messages-message.is-own .messages-bubble { background:rgba(135,50,88,.27); border-color:#f2abc566; }
+body.caz-themed .messages-page .messages-bubble p { color:#f0fefe !important; }
+body.caz-themed .messages-sender { color:#bcfafb; }
+body.caz-themed .messages-message.is-own .messages-sender { color:#ffd0df; }
+body.caz-themed :is(.messages-meta,.messages-compose-help,.messages-compose label) { color:#c1e6e7; }
+body.caz-themed .messages-page :is(input[type=search],textarea) { background:rgba(6,45,47,.54) !important; color:#f1fefe !important; border-color:#bdf9fc66 !important; }
+body.caz-themed .messages-page :is(input,textarea)::placeholder { color:#bbe0e1 !important; }
+body.caz-themed .messages-page .messages-compose button { background:rgba(150,39,64,.75) !important; border-color:#ec9db5; }
+body.caz-themed .messages-page .messages-compose button:hover { background:rgba(180,51,79,.86) !important; }
+body.caz-themed .messages-page .messages-error { background:rgba(112,35,44,.7); color:#ffe0d8 !important; border-color:#e895a855; }
+body.caz-themed .messages-page :is(button,input,textarea):focus-visible { outline:3px solid #c3fbfc !important; outline-offset:3px; }

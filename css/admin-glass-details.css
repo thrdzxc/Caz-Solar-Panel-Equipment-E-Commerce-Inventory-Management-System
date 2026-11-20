@@ -1,0 +1,168 @@
+/* Only the administrative product details and promotion workspace use these surfaces. */
+body:is(.caz-admin-product-details,.caz-admin-promotions) {
+  --admin-detail-glass:rgba(6,57,62,.78);
+  --admin-detail-line:rgba(185,246,239,.3);
+  --admin-detail-text:#f1ffff;
+  --admin-detail-muted:#cceae7;
+}
+body.caz-themed.caz-admin-product-details .product-wrapper {
+  width:100%; max-width:1120px; margin:24px auto !important; padding:0 22px 44px;
+}
+body.caz-admin-product-details .caz-details-toolbar { margin-bottom:16px; }
+body.caz-admin-product-details .caz-details-back {
+  display:inline-flex; align-items:center; gap:9px; min-height:44px; padding:10px 14px;
+  border:1px solid #b8f2ed66; border-radius:11px; background:rgba(8,64,67,.68);
+  color:#e9ffff; font-size:15px; text-decoration:none;
+}
+body.caz-admin-product-details .caz-details-back:hover { background:rgba(34,114,119,.82); }
+body.caz-themed.caz-admin-product-details .product-detail-box {
+  display:grid; grid-template-columns:minmax(240px,.75fr) minmax(0,1.25fr); align-items:start;
+  min-height:0; padding:0; gap:0; overflow:visible; border-radius:22px;
+  border:1px solid var(--admin-detail-line); background:var(--admin-detail-glass);
+  color:var(--admin-detail-text); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  box-shadow:inset 0 1px 0 #ffffff12,0 18px 52px #012b302e;
+}
+body.caz-themed.caz-admin-product-details .upload-section {
+  min-width:0; align-items:stretch; justify-content:flex-start; padding:26px;
+  border:0; background:transparent; border-radius:22px 0 0 22px;
+}
+body.caz-themed.caz-admin-product-details .image-placeholder {
+  width:100%; height:270px; padding:22px; margin:0 0 16px;
+  background:rgba(161,235,231,.07) !important; border:1px solid #b7f4ef33 !important; border-radius:16px;
+}
+body.caz-admin-product-details .image-placeholder img { width:100%; height:100%; object-fit:contain; }
+body.caz-admin-product-details .caz-details-image-heading { margin:0 0 14px; color:#efffff; font-size:17px; }
+body.caz-admin-product-details .caz-details-filename { margin:0; }
+body.caz-admin-product-details .caz-details-filename dt { margin-bottom:6px; color:#cceae7; font-size:13px; }
+body.caz-admin-product-details .caz-details-filename dd { margin:0; color:#e5faf6; font-size:14px; line-height:1.5; overflow-wrap:anywhere; }
+body.caz-themed.caz-admin-product-details .info-section {
+  min-width:0; padding:26px; background:transparent; justify-content:flex-start;
+  border-left:1px solid #b7f4ef2b;
+}
+body.caz-admin-product-details .caz-details-heading { margin:0 0 20px; }
+body.caz-admin-product-details .caz-details-eyebrow { display:block; margin:0 0 8px; color:#b8f6e6; font-size:12px; letter-spacing:1.3px; font-weight:700; text-transform:uppercase; }
+body.caz-admin-product-details .form-title { display:block; margin:0; padding:0; border:0; color:#f4ffff; font-size:28px; line-height:1.25; font-family:inherit; font-weight:750; }
+body.caz-admin-product-details .caz-details-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:0 0 22px; }
+body.caz-admin-product-details .caz-details-facts > div { min-width:0; }
+body.caz-admin-product-details .caz-details-facts .caz-details-name { grid-column:1/-1; }
+body.caz-admin-product-details .caz-details-facts dt { margin:0 0 7px; color:#d7f6f0; font-size:14px; font-weight:600; }
+body.caz-admin-product-details .caz-details-facts dd { min-height:45px; margin:0; padding:10px 12px; border:1px solid #b7f4ef40; border-radius:10px; background:rgba(155,238,229,.06); color:#f1ffff; font-size:16px; line-height:1.5; overflow-wrap:anywhere; }
+body.caz-admin-product-details .caz-details-facts .caz-details-price { color:#c5ffdf; font-weight:700; }
+body.caz-themed.caz-admin-product-details .caz-product-information { margin:0 0 20px; padding:18px; background:rgba(151,234,229,.05); border:1px solid #b7f4ef40; color:#dcf7f0; }
+body.caz-admin-product-details .caz-product-information h2 { margin:0 0 12px; font-size:20px; color:#f1ffff; }
+body.caz-admin-product-details .caz-product-information h3 { margin:16px 0 10px; padding-top:14px; font-size:17px; border-color:#b7f4ef33; color:#f1ffff; }
+body.caz-admin-product-details :is(.caz-product-facts,.caz-product-description) { gap:6px; font-size:15px; line-height:1.65; color:#d7f2ed; }
+body.caz-admin-product-details .caz-product-facts strong { color:#f0fffb; }
+body.caz-admin-product-details :is(.caz-product-facts,.caz-product-description) li::marker { color:#a8f0d1; }
+body.caz-admin-product-details .caz-product-information .caz-product-empty { color:#cceae7; }
+body.caz-admin-product-details .form-btns { margin:0; padding-top:18px; border-top:1px solid #b7f4ef33; }
+body.caz-admin-product-details .form-btns .btn-submit { display:inline-flex; justify-content:center; align-items:center; gap:9px; width:100%; min-height:48px; padding:11px 18px; border:1px solid #ee9aaa99; border-radius:11px; background:rgba(165,40,61,.88); color:#fff; font-family:inherit; font-size:15px; font-weight:650; letter-spacing:0; text-decoration:none; }
+body.caz-admin-product-details .form-btns .btn-submit:hover { background:rgba(191,47,70,.96); }
+
+/* Forms, status chips and management cards retain a single teal/mint palette. */
+body.caz-admin-promotions .promo-workspace { max-width:1440px; padding:26px clamp(18px,3vw,40px) 48px; }
+body.caz-admin-promotions .promo-page-heading { gap:18px; margin-bottom:22px; padding:24px; }
+body.caz-admin-promotions .promo-page-heading h1 { font-size:34px; margin-bottom:8px; letter-spacing:-.6px; }
+body.caz-admin-promotions .promo-eyebrow { margin-bottom:10px; }
+body.caz-admin-promotions .promo-admin-layout { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; }
+body.caz-admin-promotions :is(.promo-editor,.promo-manage-card,.promo-empty,.promo-list-heading) {
+  border:1px solid var(--admin-detail-line); background:var(--admin-detail-glass);
+  color:var(--admin-detail-text); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  box-shadow:inset 0 1px 0 #ffffff12,0 12px 32px #012b3020;
+}
+body.caz-admin-promotions .promo-editor { padding:24px; scroll-margin-top:24px; }
+body.caz-admin-promotions .promo-offers-panel { min-width:0; }
+body.caz-admin-promotions .promo-list-heading { border-radius:18px; padding:20px 22px; gap:12px; margin-bottom:18px; }
+body.caz-admin-promotions .promo-workspace :is(h2,h3) { color:#f1ffff; }
+body.caz-admin-promotions .promo-workspace h2 { font-size:24px; }
+body.caz-admin-promotions .promo-workspace p { color:#cceae7; }
+body.caz-admin-promotions .promo-editor-heading { margin-bottom:20px; }
+body.caz-admin-promotions .promo-editor-heading p { line-height:1.5; }
+body.caz-admin-promotions .promo-step { background:#b0f3e814; color:#bff6de; border:1px solid #b3f0e52e; }
+body.caz-admin-promotions .promo-form { gap:17px; }
+body.caz-admin-promotions .promo-form label { margin:0; gap:7px; color:#e2fbf5; font-size:14px; line-height:1.5; text-transform:none; letter-spacing:0; font-family:inherit; }
+body.caz-admin-promotions .promo-form-row { grid-template-columns:repeat(2,minmax(0,1fr)); align-items:end; gap:14px; }
+body.caz-admin-promotions .promo-form-row label { height:100%; justify-content:space-between; }
+body.caz-admin-promotions .promo-form :is(input:not([type=checkbox]):not([type=hidden]),select,textarea) {
+  min-width:0; max-width:100%; min-height:46px; width:100%; padding:10px 12px;
+  border:1px solid #b7f4ef66 !important; border-radius:10px !important;
+  background:rgba(15,78,83,.6) !important; color:#f1ffff !important;
+  font:inherit; font-size:16px; line-height:1.5; box-shadow:none; color-scheme:dark;
+}
+body.caz-admin-promotions .promo-form :is(input,textarea)::placeholder { color:#c1dfdf !important; opacity:1; }
+body.caz-admin-promotions .promo-form select option { background:#134f53; color:#f1ffff; }
+body.caz-admin-promotions .promo-form textarea { min-height:104px; resize:vertical; }
+body.caz-admin-promotions .promo-form :is(input,textarea,select):focus { border-color:#bffdf4 !important; box-shadow:0 0 0 3px #bffdf422; }
+body.caz-admin-promotions .promo-form :is(small,.promo-help,.promo-optional) { color:#cceae7; font-size:13px; line-height:1.6; }
+body.caz-admin-promotions .promo-optional { margin-left:4px; font-weight:400; text-transform:none; }
+body.caz-admin-promotions .promo-form .promo-help { margin:-4px 0 0; }
+body.caz-admin-promotions .promo-form input[type=file] { font-size:13px; padding:8px; }
+body.caz-admin-promotions .promo-form input[type=file]::file-selector-button { background:#b7eee71a; color:#edfff9; border:1px solid #b7f4ef55; border-radius:7px; padding:8px 10px; }
+body.caz-admin-promotions .promo-checkbox input[type=checkbox] { accent-color:#7cd8ba; }
+body.caz-admin-promotions .promo-publish { background:#aff0e70a; border-color:#b7f4ef40; padding:14px; }
+body.caz-admin-promotions .promo-product-preview { background:#b7eee70a; border:1px solid #b7f4ef33; }
+body.caz-admin-promotions .promo-product-preview > div { min-width:0; }
+body.caz-admin-promotions .promo-product-preview img { background:#b7eee714; }
+body.caz-admin-promotions .promo-product-preview :is(span,small) { color:#cceae7; }
+body.caz-admin-promotions .promo-product-preview strong { color:#c5ffdf; }
+body.caz-admin-promotions .promo-button { min-height:46px; padding:11px 16px; background:rgba(165,40,61,.88); border-color:#ee9aaa99; font-size:14px; font-family:inherit; letter-spacing:0; text-transform:none; }
+body.caz-admin-promotions .promo-button:hover { background:rgba(191,47,70,.96); }
+body.caz-admin-promotions .promo-button-secondary { background:#b7eee70d; border-color:#b7f4ef66; color:#edfff9 !important; }
+body.caz-admin-promotions .promo-button-secondary:hover { background:#b7eee725; }
+body.caz-admin-promotions .promo-form > .promo-actions { padding-top:18px; border-top:1px solid #b7f4ef33; gap:10px; }
+body.caz-admin-promotions .promo-form > .promo-actions > .promo-button { flex:1; }
+body.caz-admin-promotions .promo-manage-card { padding:20px; gap:18px; }
+body.caz-admin-promotions .promo-manage-card > img { width:94px; height:108px; padding:8px; background:#b7eee70b; border:1px solid #b7f4ef26; }
+body.caz-admin-promotions .promo-manage-content { overflow-wrap:anywhere; }
+body.caz-admin-promotions .promo-manage-content h3 { font-size:19px; margin:10px 0 6px; }
+body.caz-admin-promotions .promo-manage-content > strong { color:#c5ffdf; font-size:15px; line-height:1.5; }
+body.caz-admin-promotions .promo-manage-content .promo-help { font-size:13px; }
+body.caz-admin-promotions .promo-label { background:#b7eee719; color:#d1f8e7; border:1px solid #b7f4ef33; }
+body.caz-admin-promotions .promo-status { font-size:12px; background:#bfd3da16; color:#e0eeee; border:1px solid #c5dfdf44; }
+body.caz-admin-promotions .promo-status-live { background:#6cdfac1f; color:#c9ffe2; border-color:#a8ecc766; }
+body.caz-admin-promotions .promo-manage-card .promo-actions { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px; padding-top:14px; border-top:1px solid #b7f4ef2b; }
+body.caz-admin-promotions .promo-manage-card .promo-actions :is(a,button) { width:100%; min-height:44px; padding:10px; line-height:1.4; }
+body.caz-admin-promotions .promo-text-button { border:1px solid #e4a7b455; border-radius:11px; background:#b63d5b12; color:#ffd8e2; font:inherit; font-size:14px; font-weight:650; }
+body.caz-admin-promotions .promo-text-button:hover { background:#b63d5b30; border-color:#e4a7b48c; }
+body.caz-admin-promotions .promo-empty { padding:32px 22px; }
+body.caz-admin-promotions .promo-empty-icon { background:#b7eee719; color:#c5ffdf; }
+body.caz-admin-promotions .promo-notice { background:rgba(14,83,65,.8); border-color:#ace5c76b; color:#ddffeb; }
+body.caz-admin-promotions .promo-error { background:rgba(109,35,56,.8); border-color:#f1a8ba88; color:#ffe4eb; }
+body:is(.caz-admin-product-details,.caz-admin-promotions) main :is(a,button,input,select,textarea):focus-visible { outline:3px solid #bffdf4 !important; outline-offset:3px; }
+@media(max-width:1080px) {
+  body.caz-admin-promotions .promo-admin-layout { grid-template-columns:minmax(0,1fr); }
+  body.caz-admin-promotions .promo-admin-offers { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); }
+}
+@media(max-width:780px) {
+  body.caz-themed.caz-admin-product-details .product-detail-box { grid-template-columns:minmax(0,1fr); }
+  body.caz-themed.caz-admin-product-details .upload-section { padding:22px; }
+  body.caz-themed.caz-admin-product-details .image-placeholder { height:220px; }
+  body.caz-themed.caz-admin-product-details .info-section { border:0; border-top:1px solid #b7f4ef2b; padding:22px; }
+}
+@media(max-width:600px) {
+  body.caz-admin-promotions .promo-workspace { padding:20px 14px 36px; }
+  body.caz-admin-promotions .promo-page-heading { padding:20px; }
+  body.caz-admin-promotions .promo-page-heading h1 { font-size:30px; }
+  body.caz-admin-promotions .promo-page-heading > .promo-button { width:100%; }
+  body.caz-admin-promotions .promo-editor { padding:20px; }
+  body.caz-admin-promotions .promo-form-row { grid-template-columns:minmax(0,1fr); }
+  body.caz-admin-promotions .promo-manage-card { padding:16px; gap:14px; }
+  body.caz-admin-promotions .promo-manage-card > img { width:72px; height:88px; }
+  body.caz-admin-promotions .promo-manage-content h3 { font-size:18px; }
+}
+@media(max-width:420px) {
+  body.caz-themed.caz-admin-product-details .product-wrapper { padding:0 14px 32px; }
+  body.caz-themed.caz-admin-product-details :is(.upload-section,.info-section) { padding:18px; }
+  body.caz-admin-product-details .caz-details-facts { gap:12px; }
+  body.caz-admin-product-details .caz-product-information { padding:14px; }
+  body.caz-admin-promotions .promo-manage-card { display:block; }
+  body.caz-admin-promotions .promo-manage-card > img { float:right; margin:0 0 12px 14px; }
+  body.caz-admin-promotions .promo-manage-card .promo-actions { clear:both; }
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+  body:is(.caz-admin-product-details,.caz-admin-promotions) { --admin-detail-glass:rgba(6,57,62,.96); }
+}
+@media(prefers-reduced-motion:reduce) {
+  body.caz-admin-promotions .promo-button { transition:none; }
+  body.caz-admin-promotions .promo-button:hover { transform:none; }
+}

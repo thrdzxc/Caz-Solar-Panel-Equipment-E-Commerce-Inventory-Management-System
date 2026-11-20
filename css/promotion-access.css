@@ -1,0 +1,98 @@
+/* Promotion browsing never requires an account; purchase actions still do. */
+body.caz-promotions-page .promo-workspace { max-width:1440px; padding-top:30px; }
+body.caz-promotions-page .promo-catalog-heading { padding:22px 24px; margin:28px 0 22px; border:1px solid #b9f3f64f; border-radius:18px; background:rgba(6,62,68,.85); backdrop-filter:blur(14px); }
+body.caz-promotions-page .promo-catalog-heading h2 { color:#f3ffff; margin:6px 0 0; }
+body.caz-promotions-page .promo-category-tabs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); flex:0 0 auto; gap:5px; padding:6px; min-width:310px; border-radius:13px; }
+body.caz-promotions-page .promo-category-tabs button { min-width:0; min-height:44px; padding:10px 16px; border:1px solid transparent; transition:background .25s ease,border-color .25s ease; }
+body.caz-promotions-page .promo-category-tabs button:hover { background:#baf8f61a; border-color:#baf8f666; }
+body.caz-promotions-page .promo-category-tabs button[aria-pressed=true] { background:#26765f; border-color:#b3f5df99; }
+body.caz-promotions-page .promo-grid { grid-template-columns:repeat(auto-fill,minmax(min(100%,315px),1fr)); align-items:stretch; gap:24px; }
+body.caz-promotions-page .promo-card { max-width:none; background:rgba(6,57,63,.86); border-color:#b7f4ef55; box-shadow:0 12px 34px #02343e33; backdrop-filter:blur(16px); transition:transform .4s ease,box-shadow .4s ease,border-color .4s ease; }
+body.caz-themed.caz-promotions-page .promo-card:hover { background:rgba(8,66,72,.92); }
+body.caz-promotions-page .promo-card-image { height:235px; margin:16px 16px 0; padding:46px 26px 20px; border:1px solid #b7f4ef38; border-radius:16px; background:radial-gradient(ellipse at center,#a6f4ed22,transparent 72%); }
+body.caz-promotions-page .promo-card-image img { mix-blend-mode:normal; filter:drop-shadow(0 12px 12px #022e3c4d); transition:transform .45s ease; }
+body.caz-promotions-page .promo-card-badge { top:12px; left:12px; background:#12575ce6; border-color:#b7f4ef55; color:#e9ffff; font-size:12px; letter-spacing:.04em; }
+body.caz-promotions-page .promo-card-body { padding:24px; }
+body.caz-promotions-page .promo-card-body h3 { font-size:23px; color:#f3ffff; }
+body.caz-promotions-page .promo-card-body p,body.caz-promotions-page .promo-price { color:#d1eeef; }
+body.caz-promotions-page .promo-card-body :is(.promo-product-name,.promo-description) { font-size:15px; }
+body.caz-promotions-page .promo-benefit { background:#b4f9e912; color:#d3ffed; border:1px solid #abefd044; font-size:15px; }
+body.caz-promotions-page .promo-price strong { color:#bdffdc; }
+body.caz-promotions-page .promo-price del { color:#c4dcdc; }
+body.caz-promotions-page .promo-card-body .promo-saving { color:#baffdc; font-size:14px; }
+body.caz-promotions-page .promo-card-body .promo-help { font-size:13px; }
+body.caz-promotions-page .promo-quantity-label { color:#b6f6e8; }
+body.caz-promotions-page .promo-card-body .promo-stock-note { background:#6f55283d; color:#ffedc5; border:1px solid #f1cb774d; }
+body.caz-promotions-page .promo-link { color:#c7ffff; text-underline-offset:4px; }
+body.caz-promotions-page .promo-button-secondary { background:#b4f8f214; border-color:#b7f4ef66; color:#efffff!important; }
+body.caz-promotions-page .promo-button-secondary:hover { background:#b4f8f22a; }
+body.caz-promotions-page .promo-empty { background:rgba(6,57,63,.86); border-color:#b7f4ef55; color:#f3ffff; }
+body.caz-promotions-page .promo-empty :is(h3,p),body.caz-promotions-page .promo-terms { color:#dcf5f5; }
+body.caz-promotions-page .promo-workspace :is(a,button):focus-visible { outline:3px solid #bdffff; outline-offset:4px; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) { body.caz-promotions-page .promo-card:hover { transform:translateY(-4px); border-color:#c2ffff88; box-shadow:0 18px 38px #02343e55; } body.caz-promotions-page .promo-card:hover .promo-card-image img { transform:scale(1.045); } }
+@media(max-width:700px) { body.caz-promotions-page .promo-catalog-heading { padding:20px; align-items:stretch; gap:18px; } body.caz-promotions-page .promo-category-tabs { width:100%; min-width:0; } body.caz-promotions-page .promo-category-tabs button { padding:10px 7px; } }
+@media(prefers-reduced-motion:reduce) { body.caz-promotions-page :is(.promo-card,.promo-card-image img,.promo-category-tabs button) { transition:none; } }
+body.caz-themed .promo-hero { background:linear-gradient(130deg,rgba(5,62,66,.92),rgba(12,91,101,.8)); border-color:#b9f3f659; color:#f2ffff; backdrop-filter:blur(14px); }
+body.caz-themed .promo-hero h1 { color:#f2ffff; }
+body.caz-themed .promo-hero p { color:#d3f1f3; }
+body.caz-themed .promo-hero .promo-eyebrow { color:#b2f9e6!important; }
+body.caz-themed .promo-hero-art { color:#e2fff6; }
+body.caz-themed .promo-art-caption { color:#c9f3ef; }
+body.caz-themed .promo-category-tabs { background:#07494edb; border-color:#b9f3f659; }
+body.caz-themed .promo-category-tabs button { color:#def9fa; background:transparent; }
+body.caz-themed .promo-category-tabs button[aria-pressed=true] { color:#fff; background:#277058; }
+body.caz-themed .login-promotions {
+  margin-top:22px; padding-top:20px; border-top:1px solid rgba(181,245,247,.28);
+}
+body.caz-themed .login-promotion-button {
+  display:flex; align-items:center; justify-content:center; width:100%; min-height:50px;
+  padding:12px 18px; box-sizing:border-box; border:1px solid #bcf7f880;
+  border-radius:12px; color:#f2fefe; background:rgba(124,227,230,.13);
+  font:inherit; font-size:16px; font-weight:750; text-decoration:none;
+  transition:transform .3s ease,background .3s ease,border-color .3s ease;
+}
+body.caz-themed .login-promotions p { margin:10px 0 0; color:#c4e8e9; font-size:14px; line-height:1.5; text-align:center; }
+body.caz-themed .login-promotion-button:hover { background:rgba(124,227,230,.25); border-color:#d1ffff; transform:scale(1.015); }
+.promo-public-header {
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  padding:18px clamp(20px,4vw,64px); background:rgba(8,50,52,.88);
+  border-bottom:1px solid #b5f5f74d; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+}
+.promo-public-brand { display:flex; gap:12px; align-items:center; text-decoration:none; }
+.promo-public-brand img { width:64px; height:48px; object-fit:contain; }
+.promo-public-brand > span { color:#fff; font-weight:800; font-size:25px; letter-spacing:.6px; }
+.promo-public-brand small { display:block; color:#cef0f1; font-size:12px; letter-spacing:.2px; margin-top:3px; }
+.promo-public-header nav { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.promo-public-header nav a { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:10px 16px; box-sizing:border-box; color:#eefdfe; font-weight:650; text-decoration:none; border:1px solid transparent; border-radius:12px; }
+.promo-public-header nav a:hover { background:#b5f5f71a; }
+.promo-public-header nav .promo-public-login { background:#a92c46bb; border-color:#f2a8b676; }
+body.caz-themed .caz-promotion-launcher {
+  position:fixed; z-index:90; right:max(20px,env(safe-area-inset-right)); bottom:max(20px,env(safe-area-inset-bottom));
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  min-height:50px; padding:12px 21px; border:1px solid #d6ffffaa; border-radius:16px;
+  color:#f4ffff; background:rgba(9,70,73,.95); box-shadow:0 7px 25px #032e3160;
+  font-size:16px; line-height:1.35; font-weight:750; text-decoration:none;
+  backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px);
+  transition:transform .3s ease,background .3s ease,box-shadow .3s ease;
+}
+body.caz-themed .caz-promotion-launcher > span { color:#b7ffed; font-size:21px; line-height:1; }
+body.caz-themed .caz-promotion-launcher:hover { color:#fff; background:#12676b; transform:scale(1.04); box-shadow:0 10px 30px #022b3070; }
+/* Reserve a reachable area below the last form/card; keep drawers in front. */
+body:has(> .caz-promotion-launcher) { padding-bottom:90px; }
+body:has(#cart-overlay.active,#profile-panel.active,#search-overlay.active,.caz-modal-overlay.show,#caz-confirm-overlay.show) > .caz-promotion-launcher,
+body:has(#caz-addr-manage-modal,#caz-pw-modal) > .caz-promotion-launcher { visibility:hidden; pointer-events:none; }
+body.caz-themed .login-promotion-button:focus-visible,
+.promo-public-header a:focus-visible,
+body.caz-themed .caz-promotion-launcher:focus-visible { outline:3px solid #b9ffff; outline-offset:4px; }
+@media (max-width:600px) {
+  .promo-public-header { align-items:flex-start; padding:16px; gap:12px; flex-wrap:wrap; }
+  .promo-public-header nav { width:100%; }
+  .promo-public-header nav a { flex:1; padding:10px; font-size:14px; }
+  body.caz-themed .caz-promotion-launcher { right:max(12px,env(safe-area-inset-right)); bottom:max(12px,env(safe-area-inset-bottom)); min-height:46px; padding:10px 15px; font-size:15px; border-radius:13px; }
+  body:has(> .caz-promotion-launcher) { padding-bottom:78px; }
+  body:has(input:focus,textarea:focus,select:focus) > .caz-promotion-launcher { visibility:hidden; pointer-events:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.caz-themed .login-promotion-button,body.caz-themed .caz-promotion-launcher { transition:none; }
+  body.caz-themed .login-promotion-button:hover,body.caz-themed .caz-promotion-launcher:hover { transform:none; }
+}

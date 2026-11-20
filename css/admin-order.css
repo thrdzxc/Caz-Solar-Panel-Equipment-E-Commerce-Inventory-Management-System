@@ -1,0 +1,82 @@
+/* Order management shares the storefront's teal glass and readable form rhythm. */
+body.caz-themed.caz-order-details .order-page {
+  width:100%; max-width:1280px; margin:0 auto; padding:26px clamp(16px,3vw,30px) 48px;
+}
+body.caz-themed.caz-order-details .back-btn {
+  background:rgba(8,64,67,.75); color:#efffff; border-color:#b7f4ef66;
+  margin-bottom:18px; font-size:15px; text-decoration:none;
+}
+body.caz-themed.caz-order-details .back-btn:hover { background:rgba(39,121,123,.8); border-color:#b7f4efbb; color:#fff; }
+body.caz-themed.caz-order-details .manage-wrapper {
+  display:grid; grid-template-columns:minmax(235px,.68fr) minmax(0,1.32fr); align-items:start;
+  width:100%; max-width:none; margin:0; gap:0; min-height:0;
+  background:rgba(7,56,60,.83); color:#f1ffff; border:1px solid #b7f4ef55; border-radius:22px;
+  overflow:hidden; backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  box-shadow:inset 0 1px 0 #ffffff12,0 18px 52px #012b302e;
+}
+body.caz-themed.caz-order-details :is(.order-left,.order-right) { min-width:0; width:auto; background:transparent; color:#f1ffff; padding:28px; }
+body.caz-themed.caz-order-details .order-left { align-self:stretch; border-right:1px solid #b7f4ef33; gap:16px; justify-content:flex-start; }
+body.caz-themed.caz-order-details .order-right { overflow:visible; }
+body.caz-themed.caz-order-details .order-icon-box { width:100%; max-width:330px; background:rgba(157,237,237,.08); border:1px solid #b7f4ef33; border-radius:16px; }
+body.caz-themed.caz-order-details .order-icon-box.multi .img-cell { background:#b7f4ef0b; }
+body.caz-themed.caz-order-details .order-icon-box.fallback i { color:#b7efea; }
+body.caz-themed.caz-order-details .order-id-label { color:#f4ffff; font-size:25px; }
+body.caz-themed.caz-order-details .order-form-error { margin:0 0 18px; padding:14px 18px; border:1px solid #edacbb88; border-radius:12px; color:#ffe3eb; background:rgba(110,32,54,.88); font-size:16px; line-height:1.6; }
+body.caz-themed.caz-order-details .order-items-count { color:#cceae7; margin-left:6px; }
+body.caz-themed.caz-order-details .order-date-label { color:#c5e9e8; font-size:15px; line-height:1.6; }
+body.caz-themed.caz-order-details .status-badge { font-size:13px; padding:8px 16px; text-transform:capitalize; }
+body.caz-themed.caz-order-details .status-badge.pending { background:#ac7b1e30; color:#ffe2a3; border-color:#ebc78577; }
+body.caz-themed.caz-order-details .status-badge.approved { background:#38866730; color:#c5ffdf; border-color:#a8ecc777; }
+body.caz-themed.caz-order-details .status-badge.shipped { background:#5590bf30; color:#deefff; border-color:#afd8f577; }
+body.caz-themed.caz-order-details .status-badge.canceled { background:#b83b5930; color:#ffd8e2; border-color:#edacbb77; }
+body.caz-themed.caz-order-details .section-title { margin:0 0 22px; padding-bottom:18px; border-bottom:1px solid #b7f4ef33; color:#f4ffff; font-size:28px; line-height:1.3; }
+body.caz-themed.caz-order-details .field-row { gap:16px; }
+body.caz-themed.caz-order-details .field-label { margin-bottom:8px; color:#dcf7f4 !important; font-size:14px; font-weight:600; line-height:1.5; text-transform:none; letter-spacing:0; }
+body.caz-themed.caz-order-details .field-value { min-height:48px; margin-bottom:18px; padding:11px 13px; background:rgba(155,238,229,.06); border:1px solid #b7f4ef40; color:#f1ffff; font-size:16px; line-height:1.6; }
+body.caz-themed.caz-order-details .field-value.order-total { color:#c5ffdf; background:#81dbab0b; border-color:#b7f4ef40; font-size:23px; }
+body.caz-themed.caz-order-details .delivery-location-card { padding:20px; background:rgba(155,238,229,.05); border:1px solid #b7f4ef40; color:#e4faf6; }
+body.caz-themed.caz-order-details .delivery-location-heading h2 { color:#f1ffff; font-size:21px; }
+body.caz-themed.caz-order-details .delivery-location-icon { background:#b7f4ef14; color:#c5ffdf; }
+body.caz-themed.caz-order-details :is(.delivery-location-help,.delivery-location-coordinates,.delivery-location-address) { color:#cceae7; font-size:15px; }
+body.caz-themed.caz-order-details .delivery-location-coordinates strong { color:#e6fff8; }
+body.caz-themed.caz-order-details .delivery-location-empty { background:#b7f4ef0b; border-color:#b7f4ef55; }
+body.caz-themed.caz-order-details .delivery-location-empty :is(p,i) { color:#cceae7; }
+body.caz-themed.caz-order-details .delivery-location-actions { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(0,1fr); align-items:stretch; gap:10px; }
+body.caz-themed.caz-order-details .delivery-location-link { width:100%; min-height:46px; background:#b7f4ef0d; color:#ecfff9; border-color:#b7f4ef66; font-size:14px; }
+body.caz-themed.caz-order-details .delivery-location-link-primary { background:rgba(34,119,83,.72); color:#fff; border-color:#a6e4c388; }
+body.caz-themed.caz-order-details .delivery-location-link:hover { background:#b7f4ef25; color:#fff; border-color:#b7f4efbb; }
+body.caz-themed.caz-order-details .delivery-map-preview { border-color:#b7f4ef66; }
+body.caz-themed.caz-order-details .delivery-map-preview > .delivery-location-help { background:rgba(7,56,60,.96); }
+body.caz-themed.caz-order-details .item-card { background:#b7f4ef08; border-color:#b7f4ef40; }
+body.caz-themed.caz-order-details .item-card:hover { border-color:#b7f4ef88; }
+body.caz-themed.caz-order-details .item-thumb { background:#b7f4ef0b; border-color:#b7f4ef33; }
+body.caz-themed.caz-order-details .item-thumb i { color:#cceae7 !important; }
+body.caz-themed.caz-order-details .item-name { color:#f1ffff; font-size:16px; line-height:1.5; }
+body.caz-themed.caz-order-details .item-price { color:#cceae7; font-size:14px; line-height:1.5; }
+body.caz-themed.caz-order-details .item-qty { background:#b7f4ef14; color:#efffff; border-color:#b7f4ef55; font-size:14px; }
+body.caz-themed.caz-order-details .item-subtotal { color:#c5ffdf; font-size:16px; }
+body.caz-themed.caz-order-details .order-promotion-benefit { margin-top:8px; padding:10px 12px; background:#77ce9c13; color:#d5ffe6; border:1px solid #a9e9c44d; border-radius:9px; font-size:14px; line-height:1.6; }
+body.caz-themed.caz-order-details .status-select { min-height:48px; padding:11px 13px; background:rgba(18,82,86,.8) !important; border:1px solid #b7f4ef66; border-radius:10px; color:#f1ffff !important; font:inherit; font-size:16px; color-scheme:dark; }
+body.caz-themed.caz-order-details .status-select option { background:#134f53; color:#f1ffff; }
+body.caz-themed.caz-order-details .status-select:disabled { background:#b7f4ef0b !important; color:#cceae7 !important; }
+body.caz-themed.caz-order-details .update-btn { min-height:48px; background:rgba(169,43,61,.9); color:#fff; border:1px solid #ee9aaa99; }
+body.caz-themed.caz-order-details .update-btn:hover { background:rgba(189,48,70,.96); }
+body.caz-themed.caz-order-details .locked-notice { background:#b7f4ef0b; color:#d7f5ed; border-color:#b7f4ef55; }
+body.caz-themed.caz-order-details .locked-notice.canceled { background:#b83b591a; color:#ffdfE6; border-color:#edacbb66; }
+body.caz-themed.caz-order-details main :is(a,button,select):focus-visible { outline:3px solid #bffdf4 !important; outline-offset:3px; }
+@media(max-width:800px) {
+  body.caz-themed.caz-order-details .manage-wrapper { grid-template-columns:minmax(0,1fr); }
+  body.caz-themed.caz-order-details .order-left { border-right:0; border-bottom:1px solid #b7f4ef33; }
+  body.caz-themed.caz-order-details .order-icon-box { max-width:245px; }
+  body.caz-themed.caz-order-details :is(.order-left,.order-right) { padding:22px; }
+}
+@media(max-width:520px) {
+  body.caz-themed.caz-order-details .field-row { grid-template-columns:minmax(0,1fr); gap:0; }
+  body.caz-themed.caz-order-details .delivery-location-actions { grid-template-columns:minmax(0,1fr); }
+  body.caz-themed.caz-order-details :is(.order-left,.order-right) { padding:18px; }
+  body.caz-themed.caz-order-details .delivery-location-card { padding:15px; }
+  body.caz-themed.caz-order-details .section-title { font-size:25px; }
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+  body.caz-themed.caz-order-details .manage-wrapper { background:rgba(7,56,60,.97); }
+}

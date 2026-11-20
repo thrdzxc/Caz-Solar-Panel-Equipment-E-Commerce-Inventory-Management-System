@@ -1,0 +1,39 @@
+.caz-captcha {
+    min-width: 0; margin: 24px 0; padding: 18px;
+    border: 1px solid rgba(167,230,235,.55); border-radius: 16px;
+    background: rgba(5,70,80,.36); color: #f2ffff;
+}
+.caz-captcha legend { padding: 0 8px; font-size: 16px; font-weight: 700; color: #f2ffff; }
+.caz-captcha p { margin: 0 0 14px; font-size: 14px; line-height: 1.5; color: #d5f3f5; }
+.captcha-image-row { display:grid; grid-template-columns:minmax(0,1fr); gap:10px; align-items:stretch; margin-bottom:14px; }
+.caz-captcha .captcha-image { display:block; width:100%; max-width:none; height:84px; box-sizing:border-box; object-fit:contain; background:#e9fbfc; border-radius:9px; border:1px solid #bbdedf; }
+.caz-captcha .captcha-refresh {
+    width:100%; min-width:0; box-sizing:border-box; min-height:44px; margin:0; padding:10px 12px;
+    color: #efffff !important; background: rgba(36,111,121,.6) !important;
+    border: 1px solid rgba(164,228,234,.72); border-radius: 9px;
+    font: inherit; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.caz-captcha .captcha-refresh:hover { background: rgba(48,136,145,.8) !important; }
+.caz-captcha .captcha-refresh:focus-visible { outline: 3px solid #b4faff; outline-offset: 3px; }
+.caz-captcha label { display: block; margin-bottom: 8px; color: #efffff !important; font-size: 15px !important; text-transform: none; letter-spacing: normal; }
+.caz-captcha #captcha-answer { width: 100%; min-height: 48px; box-sizing: border-box; font-size: 17px !important; letter-spacing: .06em; }
+.caz-captcha .captcha-status { min-height: 21px; margin: 10px 0 0; font-size: 13px; }
+.caz-captcha .captcha-status.is-error { color: #ffdade; }
+.caz-captcha button:disabled { opacity: .65; cursor: wait; }
+/* Override legacy login-card notices without dimming verification instructions. */
+body.caz-themed .login-card .caz-captcha p {
+    color: #d5f3f5 !important; background: transparent !important;
+    padding: 0; margin: 0 0 14px; font-size: 14px; text-align: left;
+}
+body.caz-themed .login-card .caz-captcha .captcha-status { margin: 10px 0 0; font-size: 13px; }
+body.caz-themed .login-card .caz-captcha .captcha-status.is-error { color: #ffdade !important; }
+/* Keep registration fields in one compact grid, including the challenge. */
+body.caz-register-page { align-items:flex-start; padding:28px 16px; }
+body.caz-register-page .container { max-width:820px; }
+body.caz-register-page .login-card { padding:26px; }
+body.caz-register-page .form-grid { gap:18px; align-items:start; }
+body.caz-register-page .caz-captcha { margin:0; padding:16px 18px; }
+body.caz-register-page .captcha-image-row { display:grid; grid-template-columns:minmax(0,1fr) 130px; margin:0 0 12px; }
+body.caz-register-page .caz-captcha #captcha-answer { max-width:none; }
+body.caz-register-page .action { margin-top:0; }
+@media(max-width:540px) { body.caz-register-page .login-card { padding:20px 16px; } body.caz-register-page .captcha-image-row { grid-template-columns:minmax(0,1fr); } }

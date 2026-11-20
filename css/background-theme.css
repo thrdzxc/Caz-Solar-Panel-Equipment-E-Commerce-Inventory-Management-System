@@ -1,0 +1,150 @@
+/* CAZ wallpaper and glass surfaces.
+   Replace images/caz-background.jpg; its shared <img src> is in includes/background.php.
+   Tune the tint, card opacity, and blur below without editing page layouts. */
+:root {
+  --caz-glass:rgba(243,254,254,.79);
+  --caz-glass-hover:rgba(247,254,255,.88);
+  --caz-glass-line:rgba(230,253,254,.65);
+  --caz-glass-blur:18px;
+  --caz-catalog-glass:rgba(5,60,65,.76);
+  --caz-catalog-hover:rgba(8,70,75,.86);
+  --caz-wallpaper-dim:.24;
+}
+body.caz-themed { position:relative; isolation:isolate; background:#093739 !important; color:#e8fdfe; }
+body.caz-themed::before,body.caz-themed::after { content:none !important; }
+.caz-background { position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:#093739; }
+.caz-background > img { display:block; width:100%; height:100%; max-width:none; max-height:none; margin:0; padding:0; border:0; border-radius:0; object-fit:cover; object-position:center; opacity:1; filter:none; }
+.caz-background-tint { position:absolute; inset:0; background:linear-gradient(115deg,rgba(4,60,66,.12),rgba(65,184,188,.04) 80%),rgba(3,45,49,var(--caz-wallpaper-dim)); }
+.caz-background-glow { position:absolute; inset:0; background:radial-gradient(ellipse at 15% 85%,#17c7ff20,transparent 45%),radial-gradient(ellipse at 82% 18%,#56f1f616,transparent 40%); animation:caz-ambient-glow 16s ease-in-out infinite alternate; }
+@keyframes caz-ambient-glow { from { opacity:.25; } to { opacity:.85; } }
+.caz-network-effects { position:absolute; inset:0; width:100%; height:100%; opacity:.65; pointer-events:none; }
+.caz-signal-paths { stroke:#8ff8f9; stroke-width:2; stroke-dasharray:3 170; animation:caz-signal-flow 24s linear infinite; }
+.caz-signal-paths path:nth-child(even) { stroke:#b5f7ef; }
+.caz-signal-nodes { opacity:.65; }
+.caz-signal-rings circle { transform-box:fill-box; transform-origin:center; animation:caz-signal-pulse 9s ease-out infinite; }
+.caz-signal-rings circle:nth-child(2) { animation-delay:-3s; }
+.caz-signal-rings circle:nth-child(3) { animation-delay:-6s; }
+@keyframes caz-signal-flow { to { stroke-dashoffset:-692; } }
+@keyframes caz-signal-pulse { 0% { transform:scale(.45); opacity:0; } 20% { opacity:.45; } 100% { transform:scale(2.4); opacity:0; } }
+/* Let the artwork show through full-page sections. */
+body.caz-themed :is(.hero,.cctv-page,.product-detail,.about-container,.contact-container) { background:transparent !important; }
+body.caz-themed .navbar.caz-navigation { background:rgba(247,254,255,.95); border-color:#cbf7f87a; backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); box-shadow:0 4px 26px #02232426; }
+/* Only text directly over the wallpaper becomes light; panel text remains dark. */
+body.caz-themed :is(.hero-content h1,.product-page-title,.about-intro h1,.services-section > h2,.service-header h3,.sub-panel-title,.caz-page-heading h1,.transactions-header h2,.sales-table-header h2) { color:#f6feff !important; text-shadow:0 2px 14px #02292b66; }
+body.caz-themed :is(.hero-description,.catalog-description,.about-intro .intro-text,.caz-page-heading p,#result-count) { color:#d7f5f6 !important; }
+body.caz-themed :is(.hero-eyebrow,.catalog-eyebrow,.caz-page-heading .caz-eyebrow) { color:#97f8fa !important; }
+body.caz-themed :is(.messages-heading h1,.promo-page-heading h1,.promo-catalog-heading h2,.promo-list-heading h2) { color:#f6feff !important; text-shadow:0 2px 14px #02292b55; }
+body.caz-themed :is(.messages-heading p,.promo-page-heading p,.promo-list-heading p,.promo-terms) { color:#dbf4f5 !important; }
+body.caz-themed :is(.messages-heading .messages-eyebrow,.promo-page-heading .promo-eyebrow,.promo-catalog-heading .promo-eyebrow) { color:#98f8fa !important; }
+body.caz-themed :is(.no-results,#noResults,.btn-clear-filter) { color:#e3fcfe !important; }
+body.caz-themed .logs-wrapper .section-header > h2 { color:#f6feff; text-shadow:0 2px 14px #02292b66; }
+/* Frosted catalog and inventory cards: opacity never applies to their text. */
+body.caz-themed .product-card,
+body.caz-themed.caz-admin .product-item {
+  background:linear-gradient(145deg,#c4fbfc0b,#78f6f802),var(--caz-catalog-glass);
+  border:1px solid #b7f9fb45;
+  border-radius:20px; color:#e8fdfe;
+  backdrop-filter:blur(var(--caz-glass-blur)) saturate(120%);
+  -webkit-backdrop-filter:blur(var(--caz-glass-blur)) saturate(120%);
+  box-shadow:inset 0 1px 0 #ffffff18,0 12px 30px #022a2d30;
+  transition:background .2s,border-color .2s,box-shadow .2s,transform .2s;
+}
+body.caz-themed .product-card:hover,
+body.caz-themed.caz-admin .product-item:hover { background:var(--caz-catalog-hover); border-color:#b8fafb88; box-shadow:inset 0 1px 0 #ffffff22,0 16px 36px #022a2d40; }
+body.caz-themed .product-card img,
+body.caz-themed.caz-admin .product-item img { background:radial-gradient(ellipse at center,#b4f0f21a,transparent 72%); border:1px solid #dafcfd1c; }
+body.caz-themed :is(.product-card .product-name,.product-card:hover .product-name,.product-card.out-of-stock .product-name,.product-card .price),
+body.caz-themed.caz-admin .product-item .product-details h3 { color:#f6feff; text-shadow:0 1px 3px #02292b44; }
+body.caz-themed .product-card .product-name { font-size:17px; }
+body.caz-themed .product-card .stock-count { color:#b8efce !important; font-size:14px !important; }
+body.caz-themed .product-card.out-of-stock .stock-count { color:#ffb8c4 !important; }
+body.caz-themed .product-bottom { border-color:#c1f9fc33; }
+body.caz-themed .product-card .caz-product-facts { color:#d6f5f6; font-size:15px; }
+body.caz-themed .product-card .caz-product-facts strong { color:#f2fefe; }
+body.caz-themed .product-card .caz-product-facts li::marker { color:#91dfd0; }
+body.caz-themed .promo-card { background:var(--caz-glass); border-color:var(--caz-glass-line); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+body.caz-themed .promo-card:hover { background:var(--caz-glass-hover); }
+body.caz-themed .promo-card-image { background:rgba(245,253,254,.55); }
+body.caz-themed.caz-admin .inventory-section { background:rgba(16,72,75,.23); border-color:#b6f0f34d; box-shadow:0 12px 36px #02292b26; }
+body.caz-themed.caz-admin .inventory-section .header-main h2 { color:#f6feff; }
+body.caz-themed.caz-admin .product-item .product-details p { color:#d2f4f5; }
+body.caz-themed.caz-admin .product-item .product-details p:nth-of-type(2) { color:#f6feff; border-color:#c1f9fc33; }
+body.caz-themed.caz-admin .product-item .stock-zero { color:#ffb8c4; }
+body.caz-themed.caz-admin .inventory-section .empty-msg { color:#d2f4f5; }
+body.caz-themed.caz-admin .camera-types legend { background:#f0fbfb; color:#376264; border-radius:8px; padding:4px 10px; }
+/* Glass actions keep their own readable foreground, including hover and focus. */
+body.caz-themed .product-card .caz-product-details-link,
+body.caz-themed.caz-admin .inventory-card-actions a,
+body.caz-themed.caz-admin .inventory-section .view-toggle-btn { color:#eafdfe !important; background:rgba(127,236,239,.09); border:1px solid #acf8fb66; min-height:44px; }
+body.caz-themed .product-card .caz-product-details-link:hover,
+body.caz-themed.caz-admin .inventory-card-actions a:hover,
+body.caz-themed.caz-admin .inventory-section .view-toggle-btn:hover { background:rgba(150,247,249,.2); border-color:#c5fbfc; }
+body.caz-themed.caz-admin .inventory-card-actions a { display:inline-flex !important; margin:0 !important; font-size:14px !important; }
+body.caz-themed.caz-admin .inventory-card-actions a.danger { background:rgba(180,42,68,.14); color:#ffc4d0 !important; border-color:#ed98aa77; }
+body.caz-themed.caz-admin .inventory-card-actions a.danger:hover { background:rgba(190,56,80,.28); }
+body.caz-themed .product-card .product-bottom i:not(.cart-icon-disabled) { background:rgba(32,135,95,.28); border:1px solid #8ddeba8c; color:#dcffed !important; }
+body.caz-themed .product-card .product-bottom i:not(.cart-icon-disabled):hover { background:rgba(43,161,113,.46); border-color:#b8ffdb; }
+body.caz-themed .product-card .product-bottom .cart-icon-disabled { background:#b4dbdd15; color:#bbd7d8 !important; border:1px solid #b4dbdd44; }
+body.caz-themed.caz-admin .inventory-section .btn-add-header { background:rgba(159,39,61,.35) !important; border-color:#f2abbc99 !important; color:#ffffff !important; }
+body.caz-themed.caz-admin .inventory-section .btn-add-header:hover { background:rgba(180,47,72,.55) !important; }
+body.caz-themed :is(.product-card,.inventory-section) :is(a,button,[role=button]):focus-visible { outline:3px solid #bffbfc !important; outline-offset:4px; }
+/* Reading and form surfaces stay bright, with a little of the scene showing through. */
+body.caz-themed :is(.filter-row,.contact-intro,.contact-link-item,.brands-section,.caz-dashboard-intro,.caz-management-card,.product-box,.login-card) {
+  background:rgba(246,254,255,.91); color:#2b5153; border-color:#d7f1f2bb;
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 10px 30px #02292b1f;
+}
+body.caz-themed .filter-field { color:#376264; }
+/* The catalog toolbar uses the same glass treatment as its product cards. */
+body.caz-themed :is(.cctv-page,.inventory-section) .filter-row,
+body.caz-themed.caz-admin .inventory-section .camera-types { background:rgba(7,51,53,.4); border-color:#bdfafc3d; backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+body.caz-themed .cctv-page .filter-field { color:#def8f9; }
+body.caz-themed :is(.cctv-page,.inventory-section) :is(select.filter-select,.filter-reset) { background-color:rgba(137,231,234,.08) !important; color:#f1fefe !important; border-color:#b7f9fb77 !important; }
+body.caz-themed :is(.cctv-page,.inventory-section) select.filter-select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23c9edff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important; }
+body.caz-themed :is(.cctv-page,.inventory-section) :is(select.filter-select,.filter-reset):hover { background-color:rgba(150,244,247,.2) !important; border-color:#c6fbfc !important; }
+body.caz-themed.caz-admin .inventory-section .camera-types legend { background:#134b4d; color:#e8fdfe; }
+body.caz-themed.caz-admin .inventory-section .camera-type-card { background:rgba(160,239,241,.05); color:#e3fafb; border-color:#b2f9fb55; }
+body.caz-themed.caz-admin .inventory-section .camera-type-symbol { background:#cffbfc12; color:#b8fafb; }
+body.caz-themed.caz-admin .inventory-section .camera-type-option:hover .camera-type-card { background:#b4f1f21a; border-color:#bffafc; }
+body.caz-themed.caz-admin .inventory-section .camera-type-option input:checked + .camera-type-card { background:rgba(54,169,171,.23); color:#f2fefe; border-color:#a0f8fa; box-shadow:0 0 0 1px #a0f8fa; }
+body.caz-themed.caz-admin .inventory-section .camera-type-option input:checked + .camera-type-card .camera-type-symbol { background:#abf9fb26; color:#ccfcfc; }
+body.caz-themed.caz-admin .inventory-section .camera-type-option input:focus-visible + .camera-type-card { outline:3px solid #cff4ff; }
+body.caz-themed.caz-admin .inventory-section .search-box { background:rgba(117,216,219,.08); border-color:#bdfafc77; }
+body.caz-themed.caz-admin .inventory-section .search-box :is(i,input) { color:#e7fdfe !important; }
+body.caz-themed.caz-admin .inventory-section .search-box input::placeholder { color:#c7e9ea !important; }
+body.caz-themed .login-card .page-title { color:#2b5153; }
+body.caz-themed .login-card .page-subtitle { color:#4d7577; }
+body.caz-themed .contact-link-item:hover { background:rgba(249,255,255,.97); }
+body.caz-themed .hero-image,body.caz-themed .hero-image:hover { background:rgba(229,248,249,.84) !important; border-color:#e3fcfe9c; backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); box-shadow:0 18px 54px #0224263b; }
+body.caz-themed .product-image-frame { background:rgba(243,252,253,.69); }
+body.caz-themed .messages-shell { box-shadow:0 16px 44px #02252740; }
+body.caz-themed .site-footer { background:rgba(5,41,43,.8); border-color:#b4eff13b; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); }
+body.caz-themed .site-footer :is(.footer-brand h2,.footer-col h3,.text-red) { color:#eafdfe; }
+body.caz-themed .site-footer :is(.footer-brand p,.footer-col ul li a,.footer-bottom) { color:#ceeff0 !important; }
+body.caz-themed .site-footer a:hover { color:#a3f9fa !important; }
+body.caz-themed.portal-body .register-link p,body.caz-themed.portal-body .login-link p { color:#dcf7f8 !important; }
+body.caz-themed.portal-body .register-link a,body.caz-themed.portal-body .login-link a { color:#b9fafb; text-decoration:underline; text-underline-offset:4px; }
+body.caz-themed.portal-body .footer-link,body.caz-themed.portal-body .footer-link p { color:#dcf7f8 !important; }
+body.caz-themed.portal-body .footer-link a { color:#b9fafb; text-decoration:underline; text-underline-offset:4px; }
+body.caz-themed.portal-body .main-logo { padding:18px; border-radius:24px; background:rgba(231,250,251,.9); border:1px solid #ffffff99; backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+/* A solid-enough fallback keeps text readable in browsers without backdrop blur. */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+  body.caz-themed .product-card,body.caz-themed.caz-admin .product-item { background:rgba(7,51,53,.87); }
+  body.caz-themed .promo-card { background:rgba(242,254,254,.94); }
+}
+@media(max-width:650px) {
+  .caz-background > img { object-position:62% center; }
+  :root { --caz-glass-blur:12px; --caz-glass:rgba(243,254,254,.84); --caz-catalog-glass:rgba(5,60,65,.8); }
+  .caz-network-effects { opacity:.4; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .caz-background-glow { animation:none; opacity:.4; }
+  .caz-signal-paths,.caz-signal-rings circle { animation:none; }
+  .caz-signal-rings { display:none; }
+  body.caz-themed .product-card,body.caz-themed.caz-admin .product-item,body.caz-themed .promo-card { transition:none; }
+}
+@media print {
+  .caz-background { display:none; }
+  body.caz-themed { background:#ffffff !important; color:#193738; }
+  body.caz-themed :is(h1,h2,h3,p,label,.hero-eyebrow,.catalog-eyebrow,.messages-eyebrow,.promo-eyebrow,.caz-eyebrow,.promo-terms,#result-count) { color:#193738 !important; text-shadow:none !important; }
+}

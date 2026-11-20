@@ -1,0 +1,96 @@
+/* Portal-only layout. Background artwork and motion live in background-theme.css. */
+body.caz-portal {
+  min-height:100vh;
+  min-height:100dvh;
+  height:auto;
+  padding:32px 20px;
+  box-sizing:border-box;
+}
+body.caz-portal .portal-container {
+  display:grid;
+  gap:24px;
+  width:100%;
+  max-width:510px;
+  margin:auto;
+  padding:30px 34px 34px;
+  border:1px solid rgba(176,249,251,.38);
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(41,113,115,.24),rgba(7,45,47,.32)),rgba(6,42,44,.56);
+  box-shadow:inset 0 1px 0 rgba(230,253,254,.16),0 24px 70px rgba(1,25,27,.38);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  text-align:center;
+  color:#f6feff;
+}
+body.caz-themed.caz-portal .main-logo {
+  display:flex;
+  justify-content:center;
+  padding:0;
+  margin:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+body.caz-portal .main-logo img {
+  display:block;
+  width:250px;
+  max-width:85%;
+  height:auto;
+  max-height:190px;
+  object-fit:contain;
+  margin:0;
+}
+body.caz-portal .portal-intro { display:grid; gap:8px; }
+body.caz-portal .portal-intro p { margin:0; color:#d2f5f6; font-size:16px; line-height:1.55; }
+body.caz-portal .portal-intro .portal-eyebrow { font-size:11px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:#a9fafa; }
+body.caz-portal .portal-intro h1 { margin:0; font-size:clamp(27px,5vw,34px); line-height:1.2; letter-spacing:-.9px; color:#f6feff; }
+body.caz-portal .portal-buttons { display:grid; gap:14px; width:100%; }
+body.caz-portal .portal-btn {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  width:100%;
+  max-width:none;
+  min-height:58px;
+  padding:17px 18px;
+  border:1px solid rgba(185,248,250,.4);
+  border-radius:16px;
+  background:rgba(194,244,245,.08);
+  color:#f6feff !important;
+  text-align:center;
+  font-size:18px;
+  font-weight:650;
+  text-decoration:none;
+  text-transform:none;
+  letter-spacing:0;
+  box-shadow:inset 0 1px 0 rgba(227,253,254,.07);
+  transition:background .2s,border-color .2s,transform .2s;
+}
+body.caz-portal .portal-btn.portal-customer { background:rgba(51,204,206,.17); border-color:rgba(143,248,249,.58); }
+body.caz-portal .portal-btn:hover { background:rgba(124,234,236,.19); border-color:#aafafb; color:#ffffff !important; transform:translateY(-2px); }
+body.caz-portal .portal-btn:focus-visible { outline:3px solid #bafbfb !important; outline-offset:4px; }
+body.caz-portal .portal-role-icon { display:grid; place-items:center; flex:0 0 44px; width:44px; height:44px; border-radius:12px; background:rgba(158,248,250,.1); color:#b6fafb; }
+body.caz-portal .portal-role-icon svg { display:block; width:24px; height:24px; }
+body.caz-portal .portal-role-copy { display:grid; gap:3px; min-width:0; flex:1; }
+body.caz-portal .portal-role-copy strong { color:#f6feff; font-size:18px; line-height:1.3; font-weight:650; }
+body.caz-portal .portal-role-copy > span { color:#d2f5f6; font-size:13px; line-height:1.5; font-weight:400; }
+body.caz-portal .portal-role-arrow { font-size:23px; color:#b5fafb; line-height:1; }
+@media(max-width:480px) {
+  body.caz-portal { padding:20px 14px; }
+  body.caz-portal .portal-container { gap:22px; padding:24px 20px; border-radius:22px; }
+  body.caz-portal .main-logo img { width:225px; max-height:170px; }
+  body.caz-portal .portal-btn { padding:15px 13px; gap:11px; }
+  body.caz-portal .portal-role-icon { flex-basis:38px; width:38px; height:38px; }
+  body.caz-portal .portal-role-arrow { font-size:20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body.caz-portal .portal-btn { transition:none; }
+  body.caz-portal .portal-btn:hover { transform:none; }
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+  body.caz-portal .portal-container { background:rgba(7,47,49,.93); }
+}

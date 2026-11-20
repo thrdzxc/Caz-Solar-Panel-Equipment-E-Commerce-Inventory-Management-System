@@ -1,0 +1,54 @@
+body.caz-themed .identity-upload { min-width:0; margin:0; padding:20px; border:1px solid #b9f3f650; border-radius:15px; background:#063d426b; color:#efffff; }
+.identity-upload legend { font-size:18px; font-weight:750; padding:0 8px; color:#efffff; }
+body.caz-themed .identity-upload p,body.caz-themed .identity-upload small { color:#d3f1f3!important; background:none!important; font-size:14px; line-height:1.6; padding:0!important; margin:0 0 14px; text-align:left; }
+.identity-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.identity-fields > div { min-width:0; }
+body.caz-themed .identity-fields label { display:block; margin:0 0 7px; color:#f2ffff!important; font-size:14px!important; text-transform:none; letter-spacing:0; }
+body.caz-themed .identity-fields :is(input,select) { width:100%; box-sizing:border-box; color:#f2ffff!important; background:#0d535cb3!important; border:1px solid #b9f3f680!important; border-radius:10px; padding:12px; font:inherit; min-height:46px; }
+.identity-fields option { color:#f2ffff; background:#134b52; }
+/* Keep native registration menus readable in the same teal palette as the form. */
+body.caz-themed.caz-register-page select {
+  color-scheme:dark;
+  padding-right:40px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23d9f9f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+}
+body.caz-themed.caz-register-page select option {
+  background-color:#134b52;
+  color:#f2ffff;
+}
+body.caz-themed.caz-register-page select option:disabled { color:#b9d9d9; }
+body.caz-themed.caz-register-page select option:checked {
+  background-color:#287078;
+  color:#ffffff;
+}
+.identity-fields small { display:block; margin-top:7px!important; }
+body.caz-themed .identity-consent { display:flex; gap:10px; align-items:flex-start; color:#efffff!important; font:inherit!important; font-size:14px!important; line-height:1.6; letter-spacing:0; text-transform:none; }
+body.caz-themed .identity-consent input { width:19px; height:19px; min-height:0; flex:0 0 19px; margin:3px 0 0; accent-color:#5acfac; }
+#identity-preview { margin:0; grid-column:1/-1; }
+#identity-preview[hidden] { display:none; }
+#identity-preview img { display:block; max-width:100%; max-height:260px; object-fit:contain; border-radius:10px; }
+#identity-preview figcaption { color:#d3f1f3; font-size:13px; margin:8px 0 0; }
+.verification-shell { max-width:1100px; padding:28px 20px 48px; margin:auto; color:#f2ffff; }
+.verification-panel { padding:24px; border:1px solid #b9f3f64d; border-radius:18px; background:#063d42d1; backdrop-filter:blur(14px); margin-bottom:20px; }
+.verification-panel h1 { font-size:clamp(25px,3vw,34px); margin:0 0 12px; color:#f2ffff; }
+.verification-panel h2 { color:#f2ffff; font-size:21px; margin:0 0 14px; }
+.verification-panel p,.verification-panel dd { color:#d3f1f3; line-height:1.6; overflow-wrap:anywhere; }
+.verification-panel label { color:#efffff; display:block; margin:10px 0; }
+body.caz-themed .verification-panel textarea { display:block; box-sizing:border-box; width:100%; min-height:85px; padding:12px; background:#0e555bc9!important; color:#f2ffff!important; border:1px solid #b9f3f680!important; border-radius:10px; font:inherit; }
+body.caz-themed .verification-panel textarea::placeholder { color:#c9e6e6!important; opacity:1; }
+.verification-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+.verification-actions :is(a,button),.verification-filters a { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 17px; box-sizing:border-box; border-radius:10px; border:1px solid #b9f3f680; background:#16656c99; color:#f2ffff; font:inherit; font-weight:650; text-decoration:none; cursor:pointer; }
+.verification-actions .approve { background:#216a50; } .verification-actions .reject { background:#942b43; }
+.verification-actions :is(a,button):hover,.verification-filters a:hover { filter:brightness(1.15); }
+.verification-status { display:inline-block; padding:6px 12px; border-radius:9px; background:#c5eee31a; border:1px solid #b9f3f64d; color:#d6fff4; font-weight:700; text-transform:capitalize; }
+.verification-message { padding:14px 18px; border:1px solid #b9f3f660; border-radius:10px; background:#174f59; color:#f2ffff; margin-bottom:16px; }
+.verification-live { padding:12px 16px; border:1px solid #b9f3f64d; border-radius:10px; background:#063d42d1; color:#dcfaf5; font-size:15px; line-height:1.5; }
+.verification-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.verification-grid dt { color:#bcebed; font-size:13px; margin-bottom:4px; }.verification-grid dd { margin:0; font-weight:600; }
+.verification-filters { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0; }.verification-filters [aria-current=page] { background:#286b59; }
+body.caz-themed .verification-banner { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px; padding:12px 20px; margin:0; color:#f2ffff; background:#063e43e8; border-bottom:1px solid #b9f3f65c; line-height:1.5; }
+.verification-banner a { color:#c8ffe8; text-decoration:underline; text-underline-offset:3px; font-weight:700; }
+.verification-profile-link { display:block; margin:14px 0; color:#c8ffe8; font-weight:650; }
+@media(max-width:600px) { .identity-fields,.verification-grid { grid-template-columns:minmax(0,1fr); }.verification-panel { padding:18px; }.verification-actions>* { flex:1; }.identity-upload { padding:16px!important; } }

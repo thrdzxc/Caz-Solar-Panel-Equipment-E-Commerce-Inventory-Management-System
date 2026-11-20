@@ -1,0 +1,28 @@
+/* The menu is rendered in the page so its color is consistent on every device. */
+body.caz-themed .catalog-filters { position:relative; z-index:30; margin:28px 0 24px; padding:22px; border:1px solid #adeeef4d; border-radius:20px; background:rgba(5,60,65,.82); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+body.caz-themed .catalog-filters-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:17px; }
+body.caz-themed .catalog-filters-heading h2 { margin:0; color:#f3fefe; font-size:18px; letter-spacing:-.25px; }
+body.caz-themed .catalog-filter-count { color:#c9f5f6; font-size:14px; }
+body.caz-themed .catalog-filters .filter-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)) auto; align-items:end; gap:14px; margin:0; padding:0; background:transparent; border:0; border-radius:0; backdrop-filter:none; overflow:visible; }
+body.caz-themed .catalog-filters .filter-field { display:block; min-width:0; }
+body.caz-themed .catalog-filters .filter-field > label { display:block; margin:0 0 8px; color:#cef7f8; font-size:14px; font-weight:600; }
+body.caz-themed .catalog-filters select[hidden],body.caz-themed .catalog-filters [hidden] { display:none !important; }
+body.caz-themed .catalog-select { position:relative; min-width:0; }
+body.caz-themed .catalog-select.is-open { z-index:40; }
+body.caz-themed .catalog-select-trigger { width:100%; min-height:50px; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:11px 14px; text-align:left; background:rgba(130,230,232,.1); border:1px solid #b9f6f766; color:#f2fefe; border-radius:12px; font-family:inherit; font-weight:600; font-size:15px; line-height:1.4; cursor:pointer; }
+body.caz-themed .catalog-select-trigger > span:first-child { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+body.caz-themed .catalog-select-arrow { color:#acfafb; font-size:22px; line-height:1; transition:transform .15s; }
+body.caz-themed .catalog-select.is-open .catalog-select-arrow { transform:rotate(180deg); }
+body.caz-themed .catalog-select-trigger:hover,body.caz-themed .has-filter .catalog-select-trigger { border-color:#99f7f9; background:rgba(78,199,202,.19); }
+body.caz-themed .catalog-select-trigger:focus-visible { outline:3px solid #affafb !important; outline-offset:3px; }
+body.caz-themed .catalog-select-menu { position:absolute; top:calc(100% + 9px); left:0; right:0; padding:7px; max-height:270px; overflow:auto; border:1px solid #b4f9fb70; border-radius:14px; background:rgba(13,65,67,.96); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); box-shadow:0 16px 36px #02202166; color-scheme:dark; scrollbar-width:thin; }
+body.caz-themed .catalog-select-option { position:relative; border-radius:8px; min-height:42px; padding:10px 32px 10px 12px; color:#ebfdfe; font-size:15px; line-height:1.5; font-weight:500; cursor:pointer; overflow-wrap:anywhere; }
+body.caz-themed .catalog-select-option:hover,body.caz-themed .catalog-select-option.is-active { background:#85f6f926; }
+body.caz-themed .catalog-select-option[aria-selected=true] { color:#c6f4ff; background:#48c5c733; }
+body.caz-themed .catalog-select-option[aria-selected=true]::after { content:'✓'; position:absolute; right:12px; color:#a7eece; }
+body.caz-themed .catalog-filters .filter-reset { height:50px; min-width:98px; padding:10px 16px; border-radius:12px !important; background:rgba(116,216,218,.08) !important; color:#ddfcfd !important; border-color:#bdf5f759 !important; }
+body.caz-themed .catalog-filters .filter-reset:hover { background:rgba(116,216,218,.22) !important; }
+body.caz-themed .catalog-empty { text-align:center; color:#e2fdfd; padding:35px; background:rgba(10,54,56,.55); border:1px solid #aae9ea55; border-radius:16px; }
+.catalog-empty[hidden] { display:none; }
+@media(max-width:1050px) { body.caz-themed .catalog-filters .filter-row { grid-template-columns:repeat(2,minmax(0,1fr)); } body.caz-themed .catalog-filters .filter-reset { grid-column:1 / -1; justify-self:end; } }
+@media(max-width:520px) { body.caz-themed .catalog-filters { padding:16px; } body.caz-themed .catalog-filters .filter-row { grid-template-columns:1fr; gap:13px; } body.caz-themed .catalog-filters .filter-reset { justify-self:stretch; } body.caz-themed .catalog-filters-heading { align-items:flex-start; flex-direction:column; gap:4px; } }

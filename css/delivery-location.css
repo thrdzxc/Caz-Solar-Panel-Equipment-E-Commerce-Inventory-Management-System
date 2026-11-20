@@ -1,0 +1,106 @@
+/* Delivery pins share a clear, light surface in checkout and order management. */
+body .delivery-location-card,
+body .delivery-picker {
+  min-width: 0;
+  padding: 20px;
+  margin: 0 0 26px;
+  border: 1px solid #cdded5;
+  border-radius: 15px;
+  background: linear-gradient(150deg, #f5faf7, #fff 65%);
+  color: #30485c;
+}
+body .delivery-picker { margin-top: 16px; padding: 17px; }
+body .delivery-location-heading { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+body .delivery-location-heading h2,
+body .delivery-picker-heading { margin: 0 0 6px; color: #294837; font-size: 19px; font-weight: 750; letter-spacing: -.25px; line-height: 1.45; }
+body .delivery-location-icon { display: grid; place-items: center; flex: none; width: 42px; height: 42px; border-radius: 12px; background: #e4f1e9; color: #236443; font-size: 19px; }
+body .delivery-location-help,
+body .delivery-map-status { margin: 6px 0; color: #52697b; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
+body .delivery-map-status { margin-top: 10px; }
+body .delivery-map-status[data-state="error"],
+body .delivery-map-status.is-error { color: #9a2f40; }
+body .delivery-location-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 12px; }
+body .delivery-location-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px 13px;
+  border: 1px solid #b7cfc0;
+  border-radius: 10px;
+  color: #255c40;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: normal;
+  cursor: pointer;
+}
+body .delivery-location-link:hover { background: #e9f4ed; color: #19472f; border-color: #87b299; }
+body .delivery-location-link-primary { background: #226546; border-color: #226546; color: #fff; }
+body .delivery-location-link-primary:hover { background: #194f36; border-color: #194f36; color: #fff; }
+body .delivery-location-link:disabled { opacity: .65; cursor: wait; }
+body .delivery-location-link:focus-visible,
+body .delivery-coordinate-fields summary:focus-visible { outline: 3px solid #477aa6; outline-offset: 3px; }
+body .delivery-external-label { flex: none; font-size: 17px; line-height: 1; }
+body .delivery-directions-note { margin-top: 13px; font-size: 13px; }
+body .delivery-location-coordinates { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 14px; margin: 13px 0 0; color: #4a6276; font-size: 14px; line-height: 1.6; font-variant-numeric: tabular-nums; }
+body .delivery-location-coordinates strong { color: #354f61; font-weight: 650; }
+body .delivery-location-empty { display: flex; align-items: center; gap: 14px; padding: 16px; border: 1px dashed #bdcddd; background: #f2f6fa; border-radius: 11px; }
+body .delivery-location-empty > i { flex: none; font-size: 25px; color: #6a829a; }
+body .delivery-location-empty p { margin: 0; color: #4f657a; font-size: 14px; line-height: 1.65; }
+body .delivery-location-address { color: #324e62; font-size: 15px; margin: 14px 0 0; overflow-wrap: anywhere; }
+body .delivery-pin-summary { color: #246142; font-size: 14px; font-weight: 650; line-height: 1.6; margin: 10px 0; overflow-wrap: anywhere; }
+body .delivery-picker-map-area[hidden] { display: none !important; }
+body .delivery-map-preview,
+body .delivery-map-canvas { position: relative; isolation: isolate; z-index: 0; width: 100%; height: 260px; min-height: 260px; margin-top: 14px; border: 1px solid #b9ccbe; border-radius: 12px; overflow: hidden; background: #eaf1ef; color: #40586a; }
+body .delivery-map-preview > .delivery-location-help { padding: 20px; }
+body .delivery-coordinate-fields { margin-top: 13px; padding-top: 12px; border-top: 1px solid #d8e6de; }
+body .delivery-coordinate-fields summary { color: #42614e; font-size: 14px; font-weight: 650; cursor: pointer; min-height: 32px; }
+body .delivery-coordinate-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+body .delivery-coordinate-grid label { display: block; color: #485f73; font-size: 14px; line-height: 1.6; }
+body .delivery-coordinate-grid input { display: block; width: 100%; min-width: 0; min-height: 44px; margin-top: 5px; padding: 9px 11px; border: 1px solid #bdcfdc; border-radius: 8px; color: #2c465d; background: #fff; font-size: 15px; }
+body #caz-checkout-modal.caz-checkout-with-map .caz-modal-box,
+body #caz-checkout-modal .caz-modal-box.caz-checkout-with-map { max-width: 720px !important; width: 100%; }
+
+/* Keep the map tiles and controls independent of storefront image styling. */
+body :is(.delivery-map-canvas, .delivery-map-preview) img.leaflet-tile,
+body :is(.delivery-map-canvas, .delivery-map-preview) img.leaflet-marker-icon,
+body :is(.delivery-map-canvas, .delivery-map-preview) img.leaflet-marker-shadow {
+  max-width: none !important;
+  max-height: none !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  object-fit: fill;
+}
+body :is(.delivery-map-canvas, .delivery-map-preview) .leaflet-control-zoom a { width: 36px; height: 36px; line-height: 36px; background: #fff; color: #284d3a; font-size: 24px; border-color: #c4d5cb; text-decoration: none; }
+body :is(.delivery-map-canvas, .delivery-map-preview) .leaflet-control-zoom a:hover { background: #e9f4ed; color: #163e2a; }
+body :is(.delivery-map-canvas, .delivery-map-preview) .leaflet-control-zoom a:focus-visible { outline: 3px solid #477aa6; outline-offset: -3px; }
+body :is(.delivery-map-canvas, .delivery-map-preview) .leaflet-control-attribution { max-width: 100%; padding: 3px 6px; background: #fffffff0; color: #3b5369; font-size: 11px; line-height: 1.5; }
+body :is(.delivery-map-canvas, .delivery-map-preview) .leaflet-control-attribution a { color: #275a7a; font-size: inherit; text-decoration: underline; }
+body :is(.delivery-map-canvas, .delivery-map-preview) .leaflet-popup-content { color: #294937; font-size: 14px; line-height: 1.6; margin: 12px 16px; }
+body :is(.delivery-map-canvas, .delivery-map-preview) .leaflet-popup-content-wrapper,
+body :is(.delivery-map-canvas, .delivery-map-preview) .leaflet-popup-tip { background: #fff; }
+body :is(.delivery-map-canvas, .delivery-map-preview) .delivery-marker { border: 0; background: transparent; }
+body :is(.delivery-map-canvas, .delivery-map-preview) .delivery-marker > span { position: absolute; top: 2px; left: 1px; display: block; width: 30px; height: 30px; border: 3px solid #fff; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #236746; box-shadow: -2px 3px 7px #173b3955; }
+body :is(.delivery-map-canvas, .delivery-map-preview) .delivery-marker > span::after { position: absolute; content: ''; top: 7px; left: 7px; width: 10px; height: 10px; border-radius: 50%; background: #fff; }
+@media (max-width: 560px) {
+  body .delivery-location-card, body .delivery-picker { padding: 14px; }
+  body .delivery-location-heading { gap: 10px; }
+  body .delivery-location-heading h2, body .delivery-picker-heading { font-size: 18px; }
+  body .delivery-location-actions { align-items: stretch; }
+  body .delivery-location-link { flex: 1 1 150px; padding: 9px 10px; }
+  body .delivery-coordinate-grid { grid-template-columns: 1fr; gap: 10px; }
+  body .delivery-map-preview, body .delivery-map-canvas { height: 240px; min-height: 240px; }
+}

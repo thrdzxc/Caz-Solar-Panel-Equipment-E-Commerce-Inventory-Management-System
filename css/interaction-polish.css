@@ -1,0 +1,91 @@
+/* Shared motion and control alignment. Keep content in its normal layout. */
+body.caz-themed {
+  --caz-hover-ease:cubic-bezier(.22,.61,.36,1);
+  --caz-hover-duration:340ms;
+}
+body.caz-themed :is(.hero-content,.brand-card,.full-image-grid img,.product-card,.caz-management-card),
+body.caz-themed.caz-admin .product-item {
+  transform:scale(1);
+  transform-origin:center;
+  transition:transform var(--caz-hover-duration) var(--caz-hover-ease),
+             box-shadow var(--caz-hover-duration) var(--caz-hover-ease),
+             border-color var(--caz-hover-duration) ease,
+             background-color var(--caz-hover-duration) ease;
+}
+body.caz-themed :is(.hero-actions .btn,.nav-action,.caz-nav-links a,.caz-product-details-link,.inventory-card-actions a,.view-toggle-btn,.btn-add-header,.filter-reset,.cart-tabs .tab,.checkout-btn,.drawer-close,.add-to-cart-btn,.caz-modal-btn,.btn-submit,.caz-editor-cancel) {
+  transition:transform 260ms var(--caz-hover-ease),background-color 260ms ease,
+             border-color 260ms ease,box-shadow 260ms ease;
+}
+/* Card scaling replaces the older jump and nested image scaling. */
+body.caz-themed .product-card img,
+body.caz-themed .product-card:hover img,
+body.caz-themed.caz-admin .product-item img,
+body.caz-themed.caz-admin .product-item:hover img { transform:none; }
+body.caz-themed .product-card .product-bottom i { transition:transform 260ms var(--caz-hover-ease),background-color 260ms ease; }
+body.caz-themed .hero-actions { display:flex; flex-wrap:wrap; align-items:stretch; gap:12px; }
+body.caz-themed .hero-actions .btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; margin:0; }
+body.caz-themed .full-image-grid img { border-radius:16px; border-color:rgba(191,248,248,.35); }
+body.caz-themed .caz-management-grid { align-items:stretch; }
+body.caz-themed .caz-management-card { display:flex; flex-direction:column; }
+body.caz-themed .caz-management-card > i { flex:none; }
+body.caz-themed .caz-management-card > span { margin-top:auto; }
+body.caz-themed.caz-admin .product-item { display:flex; flex-direction:column; }
+body.caz-themed.caz-admin .product-item .product-details { display:flex; flex:1; flex-direction:column; min-width:0; }
+body.caz-themed.caz-admin .inventory-card-actions { margin-top:auto; padding-top:18px; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px; }
+body.caz-themed.caz-admin .inventory-card-actions a { justify-content:center; text-align:center; }
+body.caz-themed .product-card .product-bottom { margin-top:auto; }
+/* One primary cart tab, followed by a balanced status grid on every drawer. */
+body.caz-themed .cart-overlay .cart-tabs {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px;
+  margin:18px 0 0; padding:0; border:0;
+}
+body.caz-themed .cart-overlay .cart-tabs .tab {
+  display:flex; align-items:center; justify-content:center;
+  min-width:0; min-height:42px; margin:0; padding:10px 12px;
+  border:1px solid rgba(195,247,244,.36); border-radius:11px;
+  font-size:14px; line-height:1.35; font-weight:600; font-family:inherit; text-align:center;
+  cursor:pointer; letter-spacing:0; text-transform:none;
+}
+body.caz-themed .cart-overlay .cart-tabs .tab:first-child { grid-column:1/-1; }
+body.caz-themed .cart-overlay .cart-tabs .tab.active { box-shadow:inset 0 0 0 1px rgba(180,244,207,.2); }
+body.caz-themed .cart-overlay .drawer-title-row { align-items:center; gap:14px; margin:0; }
+body.caz-themed .cart-overlay .drawer-title-row h2 { margin:0; font-size:22px; }
+/* The search container owns the border and focus ring; its input stays frameless. */
+body.caz-themed :is(.search-box,.date-box) {
+  min-height:48px; border:1px solid rgba(190,247,248,.48);
+  border-radius:12px; background:rgba(104,206,209,.09);
+  box-shadow:none; transition:border-color 200ms ease,box-shadow 200ms ease;
+}
+body.caz-themed :is(.search-box,.date-box) input:not([type=checkbox]):not([type=radio]):not([type=hidden]),
+body.caz-themed.caz-admin .inventory-section .search-box input:not([type=checkbox]):not([type=radio]):not([type=hidden]) {
+  background:transparent !important; border:0 !important; border-radius:0 !important;
+  box-shadow:none !important; outline:none !important; outline-offset:0 !important;
+  color:#f1ffff !important; margin:0; min-width:0;
+}
+body.caz-themed :is(.search-box,.date-box) input::placeholder { color:#c7e9ea !important; opacity:1; }
+body.caz-themed :is(.search-box,.date-box) i { color:#d9fcfc; }
+body.caz-themed :is(.search-box,.date-box):focus-within {
+  border-color:#bbffff; outline:2px solid rgba(169,246,248,.66) !important; outline-offset:3px;
+  box-shadow:0 0 0 5px rgba(153,237,239,.07);
+}
+@media(hover:hover) and (pointer:fine) {
+  body.caz-themed .hero-content:hover { transform:scale(1.015); box-shadow:0 18px 42px rgba(1,32,37,.22); border-color:rgba(196,253,250,.5); }
+  body.caz-themed :is(.brand-card,.full-image-grid img):hover { transform:scale(1.035); box-shadow:0 16px 34px rgba(1,32,37,.25); border-color:#bbf8f2; }
+  body.caz-themed :is(.product-card,.caz-management-card):hover,
+  body.caz-themed.caz-admin .product-item:hover { transform:scale(1.018); box-shadow:0 18px 36px rgba(1,32,37,.3); border-color:rgba(195,255,248,.68); }
+  body.caz-themed :is(.hero-actions .btn,.nav-action,.caz-product-details-link,.inventory-card-actions a,.view-toggle-btn,.btn-add-header,.checkout-btn,.add-to-cart-btn,.caz-modal-btn,.btn-submit,.caz-editor-cancel):not(:disabled):hover { transform:scale(1.025); }
+  body.caz-themed .hero-actions .btn:hover { background:rgba(184,45,69,.86) !important; }
+  body.caz-themed .hero-actions .btn.secondary:hover { background:rgba(145,239,231,.24) !important; }
+  body.caz-themed .product-card .product-bottom i:not(.cart-icon-disabled):hover { transform:scale(1.08); }
+}
+body.caz-themed :is(.hero-content,.product-card,.caz-management-card):focus-within,
+body.caz-themed.caz-admin .product-item:focus-within { border-color:rgba(195,255,248,.8); }
+@media(prefers-reduced-motion:reduce) {
+  body.caz-themed :is(.hero-content,.brand-card,.full-image-grid img,.product-card,.caz-management-card,.hero-actions .btn,.nav-action,.caz-nav-links a,.caz-product-details-link,.inventory-card-actions a,.view-toggle-btn,.btn-add-header,.filter-reset,.cart-tabs .tab,.checkout-btn,.drawer-close,.add-to-cart-btn,.caz-modal-btn,.btn-submit,.caz-editor-cancel),
+  body.caz-themed.caz-admin .product-item,
+  body.caz-themed .product-card .product-bottom i { transition:none !important; transform:none !important; }
+}
+@media print {
+  body.caz-themed :is(.hero-content,.brand-card,.full-image-grid img,.product-card,.caz-management-card),
+  body.caz-themed.caz-admin .product-item { transform:none !important; box-shadow:none; }
+}
